@@ -1,0 +1,26 @@
+.navigation-container {
+    height:75px;
+    width:100%;
+    background-color:pink;
+
+    .navigation-item-wrapper {
+        height:100%;
+        width:100%;
+        max-width:2560px;
+        margin:0 auto;
+        border:1px solid black;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .navigation-logo {
+            height:40px;
+            width:40px;
+            background-color:red;
+        }
+    }
+}
+.nav-link {
+    margin-right: 10px;
+}

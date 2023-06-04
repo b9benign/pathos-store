@@ -1,0 +1,30 @@
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="210mm"
+      height="297mm"
+      viewBox="0 0 210 297"
+    >
+      <text
+        x="19.161"
+        y="135.548"
+        fill="#fff"
+        fillOpacity="0.035"
+        strokeWidth="0.265"
+        fontFamily="'Courier New'"
+        fontSize="26.458"
+      ></text>
+      <text
+        x="-0.186"
+        y="224.583"
+        fill="#fff"
+        strokeWidth="0.376"
+        fontFamily="'Javanese Text'"
+        fontSize="37.631"
+        transform="scale(1.4223 .70309)"
+      >
+        <tspan x="-0.186" y="224.583">
+          PATHOS
+        </tspan>
+      </text>
+      <path fill="#fff" d="M20.581 132.54H186.641V133.773H20.581z"></path>
+    </svg>
