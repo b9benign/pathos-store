@@ -5,13 +5,19 @@ const Navigation = () => {
     return(
         <div className="navigation-container">
             <div className="navigation-item-wrapper">
-                <div className="navigation-logo">Logo</div>
+                <div className="navigation-logo">
+                    <Link  className="nav-link" to="/">
+                        Logo
+                    </Link>
+                </div>
+
                 <div className="link-container-categories">
                     <Link className="nav-link">Mens</Link>
                     <Link className="nav-link">Womens</Link>
                     <Link className="nav-link">Mens</Link>
                     <Link className="nav-link">Misc</Link>
                 </div>
+
                 <div className="utility-icon-container">
                     <Link  className="nav-link">Loved</Link>
                     <Link  className="nav-link">Cart</Link>

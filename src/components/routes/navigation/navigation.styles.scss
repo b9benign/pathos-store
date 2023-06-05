@@ -1,7 +1,7 @@
 .navigation-container {
     height:75px;
     width:100%;
-    background-color:pink;
+    background-color:rgb(12, 0, 65);
 
     .navigation-item-wrapper {
         height:100%;
@@ -17,10 +17,12 @@
         .navigation-logo {
             height:40px;
             width:40px;
-            background-color:red;
+            background-color:rgb(14, 59, 0);
         }
     }
 }
 .nav-link {
     margin-right: 10px;
+    color:white;
+    text-decoration: none;
 }
