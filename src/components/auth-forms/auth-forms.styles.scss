@@ -1,0 +1,22 @@
+.authpage-form-container {
+    padding: 0 24px;
+    width:450px;
+
+    .authpage-login-button-spacer {
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .authpage-form-subtitle {
+        font-size:16px;
+        color:var(--dark-shade);
+        font-weight:300;
+    }
+    .google-icon-filled {
+        height:34px;
+        margin-bottom:-11px;
+        fill:white;
+        stroke:#393991;
+        stroke-width: 3px;
+    }
+}

@@ -1,10 +1,11 @@
-import './sign-up-form.styles.scss';
 import {
     createUserAuthWithEmailAndPassword,
     createUserDocumentFromAuth,
-} from '../../utils/fire-utils/fire-utils';
+} from '../../../utils/fire-utils/fire-utils';
 import { useState } from 'react';
-
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../../../components/custom-button/custom-button.component';
+import '../auth-forms.styles.scss';
 
 const SignUpForm = () => {
 
@@ -33,6 +34,7 @@ const SignUpForm = () => {
             const { user } = await createUserAuthWithEmailAndPassword(email, password);
             await createUserDocumentFromAuth(user, {displayName});
             emptyFormFields();
+            
         } catch (error) {
             console.log(error);
         }
@@ -41,46 +43,50 @@ const SignUpForm = () => {
 
     return (
 
-        <div className="authage-signup-container">
-                <h4>Don't have an account? Sign Up.</h4>
-                <form onSubmit={handleSubmit}>
-                    <div className="authpage-input-wrapper">
+        <div className="authpage-form-container">
+            <h2 className="authpage-form-title">Don't have an account yet?</h2>
+            <span className="authpage-form-subtitle">Sign up below.</span>
 
-                        <input 
+                <form onSubmit={handleSubmit}>
+
+                        <FormInput 
                             className="authpage-input"
-                            placeholder="name"
+                            label="Display Name"
                             name="displayName"
                             type="text"
                             onChange={handleChange}
                             value={displayName}
+                            required 
                         />
-                        <input 
+                        <FormInput 
                             className="authpage-input"
-                            placeholder="email"
+                            label="Email"
                             name="email"
                             type="email"
                             onChange={handleChange}
                             value={email}
+                            required 
                         />
-                        <input 
+                        <FormInput 
                             className="authpage-input"
-                            placeholder="password"
+                            label="Password"
                             name="password"
                             type="password"
                             onChange={handleChange}
                             value={password}
+                            required 
                         />
-                        <input 
+                        <FormInput 
                             className="authpage-input"
-                            placeholder="confirm password"
+                            label="Confirm Password"
                             name="confirmPassword"
                             type="password"
                             onChange={handleChange}
                             value={confirmPassword}
+                            required 
                         />
 
-                    </div>
-                    <button type="submit">Sign Up</button>
+                    <CustomButton type="submit" buttonType="dark">Sign Up</CustomButton>
                 </form>
         </div>
     );

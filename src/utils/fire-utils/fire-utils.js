@@ -39,7 +39,7 @@ provider.setCustomParameters({
 
 
 // sign in + account creation
-export const signInWithGooglePopup = async () => await signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const createUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) {
     return;
