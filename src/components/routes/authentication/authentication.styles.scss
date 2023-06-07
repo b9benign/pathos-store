@@ -1,7 +1,13 @@
 .authpage-container {
-    margin: 55px auto;
+    margin: 75px auto;
     width:min-content;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
+}
+
+@media only screen and (max-width:790px) {
+    .authpage-container {
+        flex-direction: column;
+    }
 }
