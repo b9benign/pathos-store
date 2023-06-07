@@ -1,7 +1,7 @@
 .authpage-form-container {
     padding: 0 24px;
     width:400px;
-    margin-bottom:50px;
+    margin-bottom:65px;
 
     .authpage-login-button-spacer {
         display:flex;
@@ -19,5 +19,11 @@
         fill:white;
         stroke:#393991;
         stroke-width: 3px;
+    }
+}
+
+@media (max-width:790px) {
+    .authpage-form-container {
+        width: 95vw;
     }
 }
