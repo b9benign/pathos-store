@@ -5,26 +5,21 @@
       viewBox="0 0 210 297"
     >
       <text
-        x="19.161"
-        y="135.548"
+        x="-237.148"
+        y="143.633"
         fill="#fff"
-        fillOpacity="0.035"
-        strokeWidth="0.265"
-        fontFamily="'Courier New'"
-        fontSize="26.458"
-      ></text>
-      <text
-        x="-0.186"
-        y="224.583"
-        fill="#fff"
-        strokeWidth="0.376"
-        fontFamily="'Javanese Text'"
-        fontSize="37.631"
-        transform="scale(1.4223 .70309)"
+        strokeWidth="1.623"
+        fontFamily="PMingLiU-ExtB"
+        fontSize="64.936"
+        transform="matrix(0 -1.2467 .80213 0 0 0)"
       >
-        <tspan x="-0.186" y="224.583">
+        <tspan x="-237.148" y="143.633">
           PATHOS
         </tspan>
       </text>
-      <path fill="#fff" d="M20.581 132.54H186.641V133.773H20.581z"></path>
+      <path
+        fill="#fff"
+        strokeWidth="0.265"
+        d="M71.76 12.044H74.269V282.024H71.76z"
+      ></path>
     </svg>

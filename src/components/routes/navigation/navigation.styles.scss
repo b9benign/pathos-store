@@ -1,28 +1,53 @@
 .navigation-container {
     height:75px;
     width:100%;
-    background-color:rgb(12, 0, 65);
+    background-color:var(--dark-shade);
 
-    .navigation-item-wrapper {
+    .navigation-items-wrapper {
         height:100%;
         width:100%;
         max-width:2560px;
         margin:0 auto;
-        border:1px solid black;
         display:flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+    .nav-utility-icon-wrapper {
+        height:48px;
 
-        .navigation-logo {
-            height:40px;
-            width:40px;
-            background-color:rgb(14, 59, 0);
+        .nav-utility-icon {
+            fill:white;
+            margin-right:10px;
+            height:24px;
+    
+            &:hover {
+                fill:#1fff1f;
+            }
         }
     }
 }
-.nav-link {
-    margin-right: 10px;
-    color:white;
+.nav-category-link {
+    margin-left:20px;
     text-decoration: none;
+    color:white;
+
+    &:hover {
+        color:#1fff1f;
+    }
+}
+.pathos-logo {
+    transform:rotate(90deg);
+    height:120px;
+    width:75px;
+    margin-left:15px;
+    fill:orange;
+    margin-bottom:-11px;
+}
+
+@media (max-width:450px) {
+    .pathos-logo {
+        height:0;
+        width:0;
+    }
 }
