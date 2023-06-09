@@ -2,6 +2,8 @@
     height:75px;
     width:100%;
     background-color:var(--dark-shade);
+    position:fixed;
+    border-bottom:3px solid #ff74d5;
 
     .navigation-items-wrapper {
         height:100%;
@@ -19,10 +21,11 @@
         .nav-utility-icon {
             fill:white;
             margin-right:10px;
+            margin-top:5px;
             height:24px;
     
             &:hover {
-                fill:#1fff1f;
+                fill:#ff74d5;
             }
         }
     }
@@ -33,21 +36,30 @@
     color:white;
 
     &:hover {
-        color:#1fff1f;
+        color:#ff74d5;
+        
     }
 }
 .pathos-logo {
     transform:rotate(90deg);
     height:120px;
     width:75px;
-    margin-left:15px;
+    margin-left:45px;
     fill:orange;
     margin-bottom:-11px;
 }
 
 @media (max-width:450px) {
-    .pathos-logo {
-        height:0;
-        width:0;
+    .navigation-container {
+        height:45px;
+
+        .pathos-logo {
+            height:0;
+            width:0;
+        }
+        .nav-category-link:last-child{
+            padding-right:10px;
+            border-right:1px solid white;
+        }
     }
 }

@@ -1,0 +1,12 @@
+.home-container {
+    width:100%;
+    height:70vh;
+    background-color:var(--light-shade);
+
+    .home-content-wrapper {
+        height:100%;
+        width:98vw;
+        max-width:2560px;
+        margin:0 auto;
+    }
+}

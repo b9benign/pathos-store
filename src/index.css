@@ -1,11 +1,11 @@
 * {
   margin:0;
   box-sizing: border-box;
-  font-family:'Roboto', sans-serif;
+  font-family:'Kanit', 'Roboto';
 }
 
 :root {
-  --bright-shade:#fcfcfc;
+  --light-shade:#e7e6e6;
   --mid-shade:#5f5f5f;
   --dark-shade:#161616;
 }

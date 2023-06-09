@@ -1,0 +1,44 @@
+.affiliate-brands-container {
+    height:25px;
+    display:flex;
+    justify-content: space-between;
+    padding-top:5px;
+    width:min-content;
+    min-width:250px;
+    margin:0 auto;
+
+    .brand-link {
+        height:100%;
+        width: 25px;
+        border-radius:50%;
+        
+        #nike-logo {
+            margin-top:-2px;
+            height:25px;
+        }
+        #adidas-logo {
+            margin-top:-1px;
+            height:15px;
+        }
+        #jordan-logo {
+            height:18px;
+        }
+        #vans-logo {
+            height:20px;
+        }
+        #on-logo {
+            height:17px;
+            margin-left:5px;
+        }
+        #newbalance-logo {
+            height:15px;
+        }
+        .affiliate-brand-logo {
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
