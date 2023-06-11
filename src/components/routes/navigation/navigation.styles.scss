@@ -1,9 +1,8 @@
 .navigation-container {
-    height:75px;
+    height:55px;
     width:100%;
-    background-color:var(--dark-shade);
-    position:fixed;
-    border-bottom:3px solid #ff74d5;
+    // background-color:var(--dark-shade);
+    background-color:rgba(0,0,0,0.7);
 
     .navigation-items-wrapper {
         height:100%;
@@ -20,13 +19,15 @@
 
         .nav-utility-icon {
             fill:white;
-            margin-right:10px;
             margin-top:5px;
             height:24px;
     
             &:hover {
-                fill:#ff74d5;
+                fill:#adf5b7;
             }
+        }
+        &:last-of-type {
+            margin-right:10px;
         }
     }
 }
@@ -36,7 +37,7 @@
     color:white;
 
     &:hover {
-        color:#ff74d5;
+        color:#adf5b7;
         
     }
 }
@@ -44,9 +45,8 @@
     transform:rotate(90deg);
     height:120px;
     width:75px;
-    margin-left:45px;
-    fill:orange;
     margin-bottom:-11px;
+    fill:black;
 }
 
 @media (max-width:450px) {
@@ -60,6 +60,9 @@
         .nav-category-link:last-child{
             padding-right:10px;
             border-right:1px solid white;
+        }
+        .nav-utility-icon {
+            margin-right:0;
         }
     }
 }

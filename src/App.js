@@ -5,18 +5,23 @@ import AuthPage from './components/routes/authentication/authentication.componen
 import HomePage from './components/routes/home/home.component';
 import AboutPage from './components/routes/about/about.component';
 import StorePage from './components/routes/store/store.component';
+import Footer from './components/footer/footer.component';
+
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Navigation />}>
-        <Route path ="/" index element={<HomePage />} />
-        <Route path="/auth" element={< AuthPage/>} />
-        <Route path="/about" element={< AboutPage/>} />
-        <Route path="/store" element={< StorePage/>} />
-      </Route>
-    </Routes>
-    
+    <div className="app-container">
+      <div className="app-content">
+        <Navigation />
+        <Routes>
+            <Route path ="/" index element={<HomePage />} />
+            <Route path="/auth" element={< AuthPage/>} />
+            <Route path="/about" element={< AboutPage/>} />
+            <Route path="/store" element={< StorePage/>} />
+        </Routes>
+      </div>
+    <Footer />
+    </div>
   );
 }
 

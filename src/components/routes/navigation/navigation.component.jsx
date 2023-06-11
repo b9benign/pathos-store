@@ -15,7 +15,7 @@ const Navigation = () => {
                 </div>
 
                 <div className="link-container-categories">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link pathos-logo" to="/">
                         <PathosLogo className="pathos-logo"/>
                     </Link>
                 </div>
