@@ -29,6 +29,20 @@
         &:last-of-type {
             margin-right:10px;
         }
+        .nav-home-icon {
+            height:0px;
+            position: absolute;
+        }
+    }
+    .nav-logout-button {
+        fill:white;
+        margin: 5px 5px 0px -12px;
+        height:24px;
+
+        &:hover {
+            fill:rgb(240, 91, 91);
+            cursor: pointer;
+        }
     }
 }
 .nav-category-link {
@@ -38,7 +52,6 @@
 
     &:hover {
         color:#adf5b7;
-        
     }
 }
 .pathos-logo {
@@ -62,7 +75,16 @@
             border-right:1px solid white;
         }
         .nav-utility-icon {
-            margin-right:0;
+            margin:5px 5px 0 -10px;
+        }
+        .nav-home-icon {
+            height:24px !important;
+            fill:white;
+            position: relative !important;
+            
+            &:hover {
+                fill:#adf5b7;
+            }
         }
     }
 }

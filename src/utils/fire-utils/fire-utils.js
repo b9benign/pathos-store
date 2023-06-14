@@ -10,7 +10,9 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
 } from 'firebase/auth';
 
 
@@ -38,7 +40,7 @@ provider.setCustomParameters({
 
 
 
-// sign in + account creation
+// authentication + account creation
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const createUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) {
@@ -54,7 +56,12 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
     return await signInWithEmailAndPassword(auth, email, password);
   }
 }
-
+export const logUserOut = async () => {
+  await signOut(auth);
+}
+export const AuthStateChangeListener = (callback) => {
+  onAuthStateChanged(auth, callback);
+}
 
 
 // db integration

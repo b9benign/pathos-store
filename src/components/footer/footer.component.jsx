@@ -28,7 +28,7 @@ const Footer = () => {
                 <section className="footer-section">
                     <span>PathoStore Resell Ltd.</span>
                     <span>27 Valley Drive</span>
-                    <span id="address-line">Houston, TX 77005</span>
+                    <span id="address-line">Harrisburg, PA 23005</span>
                     <span>+1 922 521 321</span>
                     <span>support@gmx.com</span>
                 </section>
