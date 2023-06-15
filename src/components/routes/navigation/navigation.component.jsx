@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useContext } from 'react';
-import { UserContext } from '../../../context/user-context/user-contenxt';
+import { UserContext } from '../../../context/user-context';
+import { CartContext } from '../../../context/cart-context';
 import { logUserOut } from '../../../utils/fire-utils/fire-utils';
 import { auth } from '../../../utils/fire-utils/fire-utils';
 
@@ -22,6 +23,7 @@ const Navigation = () => {
     const logOutHandler = () => {
         logUserOut(auth);
     }
+    const {toggleCartVisibility, isCartOpen} = useContext(CartContext);
 
     return(
         <div className="navigation-container">
@@ -44,8 +46,8 @@ const Navigation = () => {
                     <Link  className="nav-utility-icon-wrapper">
                         <LovedIcon  className="nav-utility-icon"/>
                     </Link>
-                    <Link  className="nav-utility-icon-wrapper">
-                        <ShoppingCartIcon  className="nav-utility-icon"/>
+                    <Link  className="nav-utility-icon-wrapper" onClick={toggleCartVisibility}>
+                        <ShoppingCartIcon  className={`nav-utility-icon ${isCartOpen ? 'cart-active' : ''}`}/>
                     </Link>
 
                     { currentUser

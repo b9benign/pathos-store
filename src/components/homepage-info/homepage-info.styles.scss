@@ -1,0 +1,49 @@
+
+    .homepage-background-image {
+        position: fixed;
+        top:0;
+        height:100vh;
+        width:100%;
+        object-fit: cover;
+        z-index:-999;
+        opacity:0.75;
+    }
+    .homepage-content-container {
+        min-height:450px;
+        width:100%;
+        margin-bottom:35px;
+        background-color:rgba(104, 103, 103, 0.5);
+
+        .homepage-sections-container {
+            margin:0 auto;
+            height:100%;
+            width:100%;
+            max-width:2560px;
+            display:flex;
+            flex-direction:row;
+            justify-content: space-around;
+            padding:25px 0;
+
+            .homepage-section {
+                height:auto;
+                min-height:500px;
+                width:30vw;
+                min-width:400px;
+                position:relative;
+                color:white;
+
+                .homepage-section-title-wrapper {
+                    text-align: center;
+                    width:100%;
+                    height:50px;
+
+                    .homepage-section-title {
+                        font-size:32px;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+  
+
