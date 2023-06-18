@@ -1,7 +1,7 @@
 import {
     createUserAuthWithEmailAndPassword,
     createUserDocumentFromAuth,
-} from '../../../utils/fire-utils/fire-utils';
+} from '../../../utils/fire-utils';
 import { useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../../../components/custom-button/custom-button.component';

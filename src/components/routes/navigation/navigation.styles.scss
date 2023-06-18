@@ -1,7 +1,6 @@
 .navigation-container {
     height:55px;
     width:100%;
-    // background-color:var(--dark-shade);
     background-color:var(--dark-shade);
     position: fixed;
     z-index:999;
@@ -25,11 +24,11 @@
             height:24px;
     
             &:hover {
-                fill:#adf5b7;
+                fill:#c2c2c2;
             }
 
             &.cart-active {
-                fill:#adf5b7;
+                fill:#4dfc65;
             }
         }
         &:last-of-type {
@@ -58,7 +57,7 @@
     font-weight:300;
 
     &:hover {
-        color:#adf5b7;
+        color:#c2c2c2;
     }
 }
 .pathos-logo {
@@ -86,7 +85,7 @@
             position: relative !important;
             
             &:hover {
-                fill:#adf5b7;
+                fill:#c2c2c2;
             }
         }
         .nav-category-link {

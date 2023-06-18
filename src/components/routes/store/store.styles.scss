@@ -1,0 +1,11 @@
+.store-page-container {
+    width:100%;
+    max-width:2560px;
+    margin: 70px auto;
+    // border:2px solid green;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-columns: auto;
+    gap: 25px;
+
+}

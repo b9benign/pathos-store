@@ -1,10 +1,10 @@
-import { createGoogleUserDoc, signInUserAuthWithEmailAndPassword } from '../../../utils/fire-utils/fire-utils';
-import { signInWithGooglePopup } from '../../../utils/fire-utils/fire-utils';
+import { createGoogleUserDoc, signInUserAuthWithEmailAndPassword, signInWithGooglePopup } from '../../../utils/fire-utils';
 import FormInput from '../form-input/form-input.component';
 import { useState } from 'react';
-import '../auth-forms.styles.scss';
 import CustomButton from '../../custom-button/custom-button.component';
 import { ReactComponent as GoogleFilled } from '../../../assets/vector-graphics/google-filled.svg'
+
+import '../auth-forms.styles.scss';
 
 const SignInForm = () => {
     

@@ -2,8 +2,8 @@ import { Link, Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../../context/user-context';
 import { CartContext } from '../../../context/cart-context';
-import { logUserOut } from '../../../utils/fire-utils/fire-utils';
-import { auth } from '../../../utils/fire-utils/fire-utils';
+import { logUserOut, auth } from '../../../utils/fire-utils';
+
 
 import { ReactComponent as LovedIcon } from '../../../assets/vector-graphics/heart-icon.svg';
 import { ReactComponent as LoginIcon } from '../../../assets/vector-graphics/login-icon.svg';

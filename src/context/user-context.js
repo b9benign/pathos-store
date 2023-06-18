@@ -1,6 +1,5 @@
-import { AuthStateChangeListener } from "../utils/fire-utils/fire-utils";
+import { AuthStateChangeListener, createUserDocumentFromAuth } from "../utils/fire-utils";
 import { createContext, useState, useEffect } from "react";
-import { createUserDocumentFromAuth } from "../utils/fire-utils/fire-utils";
 
 
 
