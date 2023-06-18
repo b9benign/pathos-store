@@ -4,7 +4,7 @@ import './product-preview.styles.scss';
 
 const ProductPreview = ({props}) => {
 
-    const {name, id, price, brand} = props;
+    const {name, id, price, brand, category} = props;
     
     return (
         <div className="product-preview-container">
@@ -21,7 +21,7 @@ const ProductPreview = ({props}) => {
                 { 
                     (id % 13 === 0 || id % 27 === 0) 
                     ?   (<div className="product-preview-trending-banner">
-                            trend
+                            trending
                         </div>)
                     :   ''
                 }
@@ -29,7 +29,9 @@ const ProductPreview = ({props}) => {
 
 
             <div className="product-preview-info-container">
-                {name} | {price} | {id}
+                <span className="product-preview-title">{brand} {name}</span>
+                <span className="product-preview-category">{category}</span>
+                <span className="product-preview-price">${price}</span>
             </div>
 
         </div>
