@@ -657,6 +657,215 @@ const STORE_DATA = [{
             price:65,
             brand:'Nike'
         },
+        {
+            id:92,
+            category:'Skate',
+            name:'Anticipate',
+            price:75,
+            brand:'Nike'
+        },
+        {
+            id:93,
+            category:'Skate',
+            name:'Edgegrinder',
+            price:80,
+            brand:'Nike'
+        },
+        {
+            id:94,
+            category:'Skate',
+            name:'Topspin',
+            price:80,
+            brand:'Nike'
+        },
+        {
+            id:95,
+            category:'Skate',
+            name:'Minze',
+            price:75,
+            brand:'Nike'
+        },
+        // 2/6 Skate
+        {
+            id:96,
+            category:'Skate',
+            name:'Backtrack 2003',
+            price:130,
+            brand:'Adidas'
+        },
+        {
+            id:97,
+            category:'Skate',
+            name:'Benchmark',
+            price:130,
+            brand:'Adidas'
+        },
+        {
+            id:98,
+            category:'Skate',
+            name:'Walkman 83',
+            price:145,
+            brand:'Adidas'
+        },
+        {
+            id:99,
+            category:'Skate',
+            name:'Star-0',
+            price:135,
+            brand:'Adidas'
+        },
+        {
+            id:100,
+            category:'Skate',
+            name:'Niagara',
+            price:120,
+            brand:'Adidas'
+        },
+        // 3/6 skate
+        {
+            id:101,
+            category:'Skate',
+            name:'Skyhigh',
+            price:160,
+            brand:'Jordan'
+        },
+        {
+            id:102,
+            category:'Skate',
+            name:'Grounded 90',
+            price:175,
+            brand:'Jordan'
+        },
+        {
+            id:103,
+            category:'Skate',
+            name:'Model C-37',
+            price:155,
+            brand:'Jordan'
+        },
+        {
+            id:104,
+            category:'Skate',
+            name:'Chaser',
+            price:160,
+            brand:'Jordan'
+        },
+        {
+            id:105,
+            category:'Skate',
+            name:'Tailgate',
+            price:170,
+            brand:'Jordan'
+        },
+        // 4/6 skate
+        {
+            id:106,
+            category:'Skate',
+            name:'Sinatra',
+            price:100,
+            brand:'ON'
+        },
+        {
+            id:107,
+            category:'Skate',
+            name:'Mid Volume',
+            price:110,
+            brand:'ON'
+        },
+        {
+            id:108,
+            category:'Skate',
+            name:'Presley 73',
+            price:115,
+            brand:'ON'
+        },
+        {
+            id:109,
+            category:'Skate',
+            name:'Skatemaster',
+            price:90,
+            brand:'ON'
+        },
+        {
+            id:110,
+            category:'Skate',
+            name:'Komplex 4',
+            price:100,
+            brand:'ON'
+        },
+        // 5/6 skate
+        {
+            id:111,
+            category:'Skate',
+            name:'Relocate',
+            price:75,
+            brand:'New Balance'
+        },
+        {
+            id:112,
+            category:'Skate',
+            name:'Viper',
+            price:80,
+            brand:'New Balance'
+        },
+        {
+            id:113,
+            category:'Skate',
+            name:'Chameleon',
+            price:110,
+            brand:'New Balance'
+        },
+        {
+            id:114,
+            category:'Skate',
+            name:'Sahara',
+            price:95,
+            brand:'New Balance'
+        },
+        {
+            id:115,
+            category:'Skate',
+            name:'Strafe Wave',
+            price:80,
+            brand:'New Balance'
+        },
+        // 6/6 brand
+        {
+            id:116,
+            category:'Skate',
+            name:'Checkerboard',
+            price:55,
+            brand:'Vans'
+        },
+        {
+            id:117,
+            category:'Skate',
+            name:'New Skool',
+            price:65,
+            brand:'Vans'
+        },
+        {
+            id:118,
+            category:'Skate',
+            name:'Old Skool',
+            price:70,
+            brand:'Vans'
+        },
+        {
+            id:119,
+            category:'Skate',
+            name:'Kyle Walker',
+            price:70,
+            brand:'Vans'
+        },
+        {
+            id:120,
+            category:'Skate',
+            name:'York Demo',
+            price:60,
+            brand:'Vans'
+        },
+        // 1/6 outdoor
     ]
 }]
 

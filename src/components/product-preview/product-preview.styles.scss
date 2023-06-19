@@ -11,9 +11,10 @@
         .product-preview-thumbnail {
             height:100%;
             width:100%;
+            transform:scale(0.9);
             object-fit: cover;
-            background-color: #f5f3f3;
-            border-bottom:1px solid rgb(185, 185, 185);
+            transition: 200ms;
+            filter:grayscale(30%);
         }
         .product-preview-heart-icon {
             position: absolute;
@@ -45,21 +46,38 @@
         padding:0 5px;
         font-weight:300;
         height:80px;
+        position: relative;
         
         .product-preview-title {
             font-weight: 600;
             font-size:16px;
             line-height: 17px;
+            border-top:1px solid rgb(185, 185, 185);
+            padding-top: 5px;
         }
         .product-preview-category {
             font-size:12px;
             text-transform: uppercase;
             color:gray;
-            margin-top:-5px;
+            margin-top:-2px;
         }
         .product-preview-price {
-            margin-top:10px;
+            position: absolute;
             font-size: 20px;
+            bottom:0;
+            left:5px;
+        }
+    }
+
+    &:hover {
+        cursor:pointer;
+        box-shadow:0px 5px 0 0 rgb(0, 0, 0);
+
+        .product-preview-image-container {
+            .product-preview-thumbnail {
+                transform:scale(1.05);
+                filter:grayscale(0%);
+            }
         }
     }
 }
