@@ -1,7 +1,58 @@
 .product-searchbar-container {
-    height: 45px;
+    height: 70px;
     width:100%;
     max-width:1200px;
-    margin: 100px auto 25px auto;
-    border:1px solid green;
+    margin: 100px auto 15px auto;
+    overflow:hidden;
+    position: relative;
+
+    .product-searchbar-content-wrapper {
+        height:45px;
+        width:100%;
+        max-width:700px;
+        display:flex;
+        justify-content: space-between;
+        // border:1px solid red;
+
+        .product-searchbar-input {
+            width:calc(100% - 40px);
+            border:1px solid var(--dark-shade);
+            padding-left:7px;
+            font-size:16px;
+            font-weight: 300;
+
+            &:focus {
+                outline:none;
+            }
+        }
+
+        .product-searchbar-button {
+            aspect-ratio: 1/1;
+            height:40px;
+            border:none;
+            position: relative;
+            background-color:white;
+
+            .product-searchbar-icon {
+                width:45px;
+                padding-right:10px;
+                margin-top:-3px;
+                fill:var(--dark-shade);
+                
+                &:hover {
+                    cursor: pointer;
+                    fill:gray;
+                }
+            }
+        }
+        .product-searchbar-reset-button {
+            position: absolute;
+            bottom:0;
+            background:none;
+            border:none;
+            color:rgb(255, 94, 0);
+            text-decoration: underline;
+            cursor:pointer;
+        }
+    }
 }

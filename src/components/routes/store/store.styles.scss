@@ -6,7 +6,6 @@
     justify-content: center;
 
     .store-page-content-spacer {
-        max-width:1450px;
         justify-content: space-between;
         margin:0 auto;
     
@@ -15,8 +14,8 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             column-gap: 10px;
             row-gap: 25px;
-            width:calc(100% - 375px);
             margin:0 auto;
+            max-width:1200px;
         }
 
         .store-page-filter-container {
