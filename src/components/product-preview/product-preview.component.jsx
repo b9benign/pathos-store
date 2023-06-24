@@ -1,18 +1,28 @@
+import { useState } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
 
 import './product-preview.styles.scss';
+import ProductModal from '../product-modal/product-modal.component';
 
 const ProductPreview = ({props}) => {
 
-    const {name, id, price, brand, category} = props;
+    const {name, id, price, brand, category, gender} = props;
+    const [modalState, setModalState] = useState(false);
+    const modalUtil = {modalState, setModalState};
+
+
+    const toggleModal = () => {
+        setModalState(true);
+    }
     
     return (
-        <div className="product-preview-container">
+        <>
+        <div className="product-preview-container" onClick={toggleModal}>
 
 
             <div className="product-preview-image-container">
                 <img 
-                    src={require(`../../assets/product-images/mens/${brand.toLowerCase()}/thumbnail.webp`)} 
+                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)} 
                     className="product-preview-thumbnail"
                     alt={name}
                     />
@@ -35,6 +45,9 @@ const ProductPreview = ({props}) => {
             </div>
 
         </div>
+
+           <ProductModal props={props} modalUtil={modalUtil}/>
+        </>
     );
 }
 

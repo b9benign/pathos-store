@@ -1,0 +1,85 @@
+.product-modal-container {
+    height:100vh;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    z-index:999;
+    padding:0 5px;
+
+    .product-modal-background {
+        height:100%;
+        width:100%;
+        background-color:rgba(0, 0, 0, 0.7);
+        top:0;
+        position: fixed;
+}
+
+    .product-modal-content-container {
+        width:100%;
+        max-width:750px;
+        aspect-ratio:3/2;
+        z-index:1;
+        background:linear-gradient(90deg,rgb(43, 165, 165) 45%, white 45.0001%);
+        display:flex;
+        flex-direction:row;
+        position: relative;
+
+        .product-modal-general-item-info {
+            height:auto;
+            width:45%;
+            // border:1px solid green;
+            display:flex;
+            flex-direction: column;
+            color:white;
+            padding:0 10px;
+            justify-content: space-between;
+
+            .product-modal-item-misc {
+                display:flex;
+                flex-direction: column;
+
+                .product-modal-item-name {
+                    font-size:45px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                }
+                .product-modal-item-brand {
+                    font-size:40px;
+                    font-weight:100;
+                    margin-top:-25px;
+                }
+                .product-modal-item-category {
+                    font-size:14px;
+                    text-transform: uppercase;
+                    font-weight:200;
+                    margin-top:-15px;
+                }
+            }
+        }
+
+        .product-modal-images-container {
+            width:55%;
+            height:100%;
+            position: absolute;
+            z-index:3;
+
+            .product-modal-displayed-image {
+                aspect-ratio: 1/1;
+                width:100%;
+                position:absolute;
+                top:8%;
+                left:0;
+                pointer-events: none;
+
+                .product-modal-active-image {
+                    height:100%;
+                }
+            }
+        }
+    }
+}

@@ -24,7 +24,7 @@ const ListProvider = ({children}) => {
 
     const updateFilteredProducts = (searchString) => {
         const tempFilterList = vanillaData.filter((item) => {
-            const itemTitle =item.name + item.brand + item.category;
+            const itemTitle =item.name + item.brand;
             return itemTitle.toLowerCase().includes(searchString)
         })
         setFilteredProducts(tempFilterList);
