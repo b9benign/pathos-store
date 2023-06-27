@@ -984,6 +984,251 @@ const STORE_DATA = [
             gender:'men'
         },
         // 1/6 outdoor
+        {
+            id:121,
+            category:'Outdoor',
+            name:'Terrain',
+            price:145,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:122,
+            category:'Outdoor',
+            name:'Terraform',
+            price:135,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:123,
+            category:'Outdoor',
+            name:'Outskirts',
+            price:155,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:124,
+            category:'Outdoor',
+            name:'Palmer 2008',
+            price:150,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:125,
+            category:'Outdoor',
+            name:'Nightline',
+            price:130,
+            brand:'Adidas',
+            gender:'men'
+        },
+        // 2/6 outdoor
+        {
+            id:126,
+            category:'Outdoor',
+            name:'Tuned 5',
+            price:110,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:127,
+            category:'Outdoor',
+            name:'Air Max 5',
+            price:105,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:128,
+            category:'Outdoor',
+            name:'City Rep TR',
+            price:120,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:129,
+            category:'Outdoor',
+            name:'90s Essential',
+            price:105,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:130,
+            category:'Outdoor',
+            name:'Zoom Fire',
+            price:100,
+            brand:'Nike',
+            gender:'men'
+        },
+        // 3/6 outdoor
+        {
+            id:131,
+            category:'Outdoor',
+            name:'Cloud 7',
+            price:130,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:132,
+            category:'Outdoor',
+            name:'Cloud X3',
+            price:120,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:133,
+            category:'Outdoor',
+            name:'Cloudrift',
+            price:140,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:134,
+            category:'Outdoor',
+            name:'Hyperbeast',
+            price:145,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:135,
+            category:'Outdoor',
+            name:'Cloudmonster v2',
+            price:125,
+            brand:'ON',
+            gender:'men'
+        },
+        // 4/6 outdoor
+        {
+            id:136,
+            category:'Outdoor',
+            name:'Stonefaced',
+            price:180,
+            brand:'Jordan',
+            gender:'men'
+        },
+        {
+            id:137,
+            category:'Outdoor',
+            name:'Mudder Special',
+            price:190,
+            brand:'Jordan',
+            gender:'men'
+        },
+        {
+            id:138,
+            category:'Outdoor',
+            name:'Edition 47',
+            price:200,
+            brand:'Jordan',
+            gender:'men'
+        },
+        {
+            id:139,
+            category:'Outdoor',
+            name:'Autumn',
+            price:175,
+            brand:'Jordan',
+            gender:'men'
+        },
+        {
+            id:140,
+            category:'Outdoor',
+            name:'Windbreaker',
+            price:220,
+            brand:'Jordan',
+            gender:'men'
+        },
+        // 5/6 outdoor
+        {
+            id:141,
+            category:'Outdoor',
+            name:'Vox Populi',
+            price:90,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:142,
+            category:'Outdoor',
+            name:'Flikflak',
+            price:100,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:143,
+            category:'Outdoor',
+            name:'Winter Ed.',
+            price:105,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:144,
+            category:'Outdoor',
+            name:'The Remaster',
+            price:85,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:145,
+            category:'Outdoor',
+            name:'Thunder 4',
+            price:90,
+            brand:'New Balance',
+            gender:'men'
+        },
+        // 6/6 outdoor
+        {
+            id:146,
+            category:'Outdoor',
+            name:'Colfox',
+            price:110,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:147,
+            category:'Outdoor',
+            name:'Reconstruct',
+            price:115,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:148,
+            category:'Outdoor',
+            name:'Sk8 Low',
+            price:100,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:149,
+            category:'Outdoor',
+            name:'Velcro',
+            price:120,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:150,
+            category:'Outdoor',
+            name:'City Milano',
+            price:105,
+            brand:'Vans',
+            gender:'men'
+        },
     ]
 
 

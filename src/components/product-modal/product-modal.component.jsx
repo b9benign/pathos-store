@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './product-modal.styles.scss';
+import ProductModalTable from '../product-modal-table/product-modal-table.component';
 import ProductModalRotation from '../product-modal-rotation/product-modal-rotation.component';
+import './product-modal.styles.scss';
 
 const ProductModal = ({props, modalUtil}) => {
 
@@ -11,6 +12,7 @@ const ProductModal = ({props, modalUtil}) => {
 
     const toggleModal = () => {
         setModalState(false);
+        setActiveImage('profile');
     }
 
 
@@ -32,10 +34,6 @@ const ProductModal = ({props, modalUtil}) => {
                         <ProductModalRotation props={props} imageToggler={imageToggler}/>
                     </div>
 
-
-
-
-
                     <div className="product-modal-images-container">
                         <div className="product-modal-displayed-image">
                             <img 
@@ -45,6 +43,8 @@ const ProductModal = ({props, modalUtil}) => {
                             />
                         </div>
                     </div>
+
+                    <ProductModalTable item={props}/>
 
                 </div>
             </div>
