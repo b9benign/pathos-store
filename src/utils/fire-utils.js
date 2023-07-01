@@ -4,6 +4,8 @@ import {
   getDoc,
   setDoc, 
   getFirestore,
+  deleteDoc,
+  collection
 } from 'firebase/firestore';
 import {
     getAuth,
@@ -64,7 +66,7 @@ export const AuthStateChangeListener = (callback) => {
 }
 
 
-// db integration
+// auth db integration
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation={}) => {
     const userDocRef = doc(db, 'users', userAuth.uid);
     const userSnapshot = await getDoc(userDocRef);
@@ -102,3 +104,23 @@ export const createGoogleUserDoc = async (googleUser) => {
     })
   }
 }
+
+// cart/ loved db integration
+
+export const toggleLovedItem = async (itemToToggle, userAuth) => {
+  const {uid} = userAuth;
+  const {id} = itemToToggle;
+  const itemDocRef = doc(db, 'users', uid, 'loved', id.toString());
+  const itemSnapShot = await getDoc(itemDocRef);
+
+  if(itemSnapShot.exists()) {
+    await deleteDoc(itemDocRef);
+    console.log('removed');
+  } else {
+    await setDoc(itemDocRef, {id});
+    console.log('set');
+  }
+  
+  console.log(`utils ${uid}`);
+  console.log(`utils ${id}`);
+};

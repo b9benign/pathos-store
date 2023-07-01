@@ -1,9 +1,9 @@
 import './product-modal-rotation.styles.scss';
 
 
-const ProductModalRotation = ({props, imageToggler}) => {
+const ProductModalRotation = ({item, imageToggler}) => {
 
-    const {brand, gender} = props;
+    const {brand, gender} = item;
     const {activeImage, setActiveImage} = imageToggler;
 
     const handleImageActivation = (newImage) => {

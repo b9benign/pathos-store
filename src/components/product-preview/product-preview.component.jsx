@@ -1,32 +1,42 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
+import { LovedItemContext } from '../../context/loved-context';
 
-import './product-preview.styles.scss';
 import ProductModal from '../product-modal/product-modal.component';
 
-const ProductPreview = ({props}) => {
+import './product-preview.styles.scss';
 
-    const {name, id, price, brand, category, gender} = props;
+
+
+const ProductPreview = ({item}) => {
+
+    const {name, id, price, brand, category, gender} = item;
     const [modalState, setModalState] = useState(false);
     const modalUtil = {modalState, setModalState};
 
+    const {toggleIsItemLoved} = useContext(LovedItemContext);
 
     const toggleModal = () => {
         setModalState(true);
     }
-    
+    const toggleLovedHandler = () => {
+        toggleIsItemLoved(item);
+    }
+
+
     return (
         <>
-        <div className="product-preview-container" onClick={toggleModal}>
+        
+        <div className="product-preview-container">
 
-
-            <div className="product-preview-image-container">
+            <LovedIcon className="product-preview-heart-icon" onClick={toggleLovedHandler}/>
+            <div className="product-preview-image-container"  onClick={toggleModal}>
                 <img 
                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)} 
                     className="product-preview-thumbnail"
                     alt={name}
                     />
-                <LovedIcon className="product-preview-heart-icon"/>
+                
 
                 { 
                     (id % 13 === 0 || id % 27 === 0) 
@@ -38,7 +48,7 @@ const ProductPreview = ({props}) => {
             </div>
 
 
-            <div className="product-preview-info-container">
+            <div className="product-preview-info-container"  onClick={toggleModal}>
                 <span className="product-preview-title">{brand} {name}</span>
                 <span className="product-preview-category">{category}</span>
                 <span className="product-preview-price">${price}</span>
@@ -46,7 +56,7 @@ const ProductPreview = ({props}) => {
 
         </div>
 
-           <ProductModal props={props} modalUtil={modalUtil}/>
+           <ProductModal item={item} modalUtil={modalUtil}/>
         </>
     );
 }

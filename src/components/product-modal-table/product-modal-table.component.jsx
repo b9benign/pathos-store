@@ -1,12 +1,12 @@
 import CustomButton from '../custom-button/custom-button.component';
-import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
+// import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
 import './product-modal-table.styles.scss';
 
 
 const ProductModalTable = ({item}) => {
 
     const shoeSizes = [37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
-    const {name, brand, category, price, id, gender} = item;
+    const {name, brand} = item;
 
     return (
         <div className="pm-table-container">
@@ -19,8 +19,8 @@ const ProductModalTable = ({item}) => {
             <span className="pm-section-title">Sizes</span>
             <div className="pm-product-sizes-container">
                 {
-                    shoeSizes.map((size) => {
-                        return (<div className="pm-product-size" value={size}>{size}</div>);
+                    shoeSizes.map((size, id) => {
+                        return (<div className="pm-product-size" key={id} value={size}>{size}</div>);
                     })
                 }
             </div>

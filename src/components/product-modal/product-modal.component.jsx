@@ -3,9 +3,9 @@ import ProductModalTable from '../product-modal-table/product-modal-table.compon
 import ProductModalRotation from '../product-modal-rotation/product-modal-rotation.component';
 import './product-modal.styles.scss';
 
-const ProductModal = ({props, modalUtil}) => {
+const ProductModal = ({item, modalUtil}) => {
 
-    const {category, name, brand, gender} = props;
+    const {category, name, brand, gender} = item;
     const {modalState, setModalState} = modalUtil;
     const [activeImage, setActiveImage] = useState('profile');
     const imageToggler = {activeImage, setActiveImage};
@@ -31,7 +31,7 @@ const ProductModal = ({props, modalUtil}) => {
                             <span className="product-modal-item-category">{category}</span>
                         </div>
 
-                        <ProductModalRotation props={props} imageToggler={imageToggler}/>
+                        <ProductModalRotation item={item} imageToggler={imageToggler}/>
                     </div>
 
                     <div className="product-modal-images-container">
@@ -44,7 +44,7 @@ const ProductModal = ({props, modalUtil}) => {
                         </div>
                     </div>
 
-                    <ProductModalTable item={props}/>
+                    <ProductModalTable item={item}/>
 
                 </div>
             </div>

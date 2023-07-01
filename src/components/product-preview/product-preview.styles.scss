@@ -2,6 +2,20 @@
     max-width:240px;
     min-width:150px;
     border:1px solid rgb(185, 185, 185);
+    position: relative;
+
+    .product-preview-heart-icon {
+        position: absolute;
+        top:5px;
+        right:-3px;
+        cursor: pointer;
+        transition: 200ms;
+        z-index:321;
+
+        &:hover {
+            transform:scale(1.1);
+        }
+    }
 
     .product-preview-image-container {
         aspect-ratio: 1/1;
@@ -15,17 +29,6 @@
             object-fit: cover;
             transition: 200ms;
             filter:grayscale(30%);
-        }
-        .product-preview-heart-icon {
-            position: absolute;
-            top:5px;
-            right:-3px;
-            cursor: pointer;
-            transition: 200ms;
-
-            &:hover {
-                transform:scale(1.1);
-            }
         }
         .product-preview-trending-banner {
             position: absolute;
@@ -68,7 +71,6 @@
             left:5px;
         }
     }
-
     &:hover {
         cursor:pointer;
         box-shadow:0px 5px 0 0 rgb(0, 0, 0);
@@ -81,3 +83,4 @@
         }
     }
 }
+

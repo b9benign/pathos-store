@@ -20,7 +20,7 @@ const StorePage = () => {
                 <ProductFilter />
                 <div className="store-products-container">
                     {filteredProducts.map((item) => {
-                        return <ProductPreview props={item} key={item.id}/>
+                        return <ProductPreview item={item} key={item.id}/>
                     })} 
                 </div> 
 
