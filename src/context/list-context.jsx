@@ -24,7 +24,7 @@ const ListProvider = ({children}) => {
 
     const updateFilteredProducts = (searchString) => {
         const tempFilterList = vanillaData.filter((item) => {
-            const itemTitle =item.name + item.brand;
+            const itemTitle = item.name + item.brand;
             return itemTitle.toLowerCase().includes(searchString)
         })
         setFilteredProducts(tempFilterList);
@@ -36,14 +36,12 @@ const ListProvider = ({children}) => {
     }
 
     useEffect(() => {
-
         const unsubscribe = () => {
             if(filteredProducts !== vanillaData) {
                 setFilteredState(true);
             } else setFilteredState(false);
-            console.log(filteredState);
         }
-        unsubscribe();
+        return unsubscribe();
     }, [filteredProducts, vanillaData, filteredState]);
 
 

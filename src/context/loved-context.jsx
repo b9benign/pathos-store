@@ -1,36 +1,48 @@
-import { createContext, useState, useContext } from "react";
-import { toggleLovedItem } from "../utils/fire-utils";
+import { createContext, useState, useContext, useEffect } from "react";
+import { toggleLovedItem, getLovedList } from "../utils/fire-utils";
 import { UserContext } from "./user-context";
+import STORE_DATA from "../utils/store-data";
 
 
 export const LovedItemContext = createContext({
     isItemLoved:false,
+    lovedList:[],
     setIsItemLoved:() => {},
-    toggleIsItemLoved:() => {}
+    toggleIsItemLoved:() => {},
+    updateLovedList:() => {}
 })
 
 
 const LovedProvider = ({children}) => {
 
+    const defaultLovedList = [];
     const [isItemLoved, setIsItemLoved] = useState(false);
+    const [lovedList, setLovedList] = useState(defaultLovedList);
     const {currentUser} = useContext(UserContext);
 
     const toggleIsItemLoved = (itemToToggle) => {
-        const {id} = itemToToggle;
         if(!currentUser){
             alert('Log in to heart items.');
-            console.log('Shiet men y no login');
         } else {
             toggleLovedItem(itemToToggle, currentUser);
-            // console.log(`context ${id}`);
-
         }
     }
 
+    useEffect(() => {
+        const unsubscribe = async () => {
+          const temp = await getLovedList(currentUser);
+          setLovedList(temp);
+        };
+      
+        if (currentUser) {
+          unsubscribe();
+        }
+      }, [currentUser]);
 
     const value = {
         isItemLoved,
         toggleIsItemLoved,
+        lovedList
     }
 
     return (

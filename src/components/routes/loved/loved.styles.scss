@@ -1,0 +1,12 @@
+.loved-page-container {
+    padding:10px;
+    width:100%;
+    max-width:2560px;
+    margin: 300px auto;
+    justify-content: center;
+
+    .loved-page-content-spacer {
+        justify-content: space-between;
+        margin:0 auto;
+    }
+}

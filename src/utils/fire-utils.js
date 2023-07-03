@@ -5,7 +5,9 @@ import {
   setDoc, 
   getFirestore,
   deleteDoc,
-  collection
+  collection,
+  query,
+  getDocs
 } from 'firebase/firestore';
 import {
     getAuth,
@@ -105,22 +107,38 @@ export const createGoogleUserDoc = async (googleUser) => {
   }
 }
 
-// cart/ loved db integration
 
+// cart/ loved db integration
 export const toggleLovedItem = async (itemToToggle, userAuth) => {
   const {uid} = userAuth;
-  const {id} = itemToToggle;
+  const {id, name, price, category, brand, gender} = itemToToggle;
   const itemDocRef = doc(db, 'users', uid, 'loved', id.toString());
   const itemSnapShot = await getDoc(itemDocRef);
 
   if(itemSnapShot.exists()) {
     await deleteDoc(itemDocRef);
-    console.log('removed');
   } else {
-    await setDoc(itemDocRef, {id});
-    console.log('set');
+    await setDoc(itemDocRef, {
+      id,
+      category,
+      name,
+      price,
+      brand,
+      gender
+    });
   }
-  
-  console.log(`utils ${uid}`);
-  console.log(`utils ${id}`);
 };
+
+export const getLovedList = async (userAuth) => {
+  const lovedColRef = collection(db, 'users', userAuth.uid, 'loved');
+  const q = query(lovedColRef);
+  const querySnapshot = await getDocs(q);
+
+  const lovedItemsMap = querySnapshot.docs.reduce((acc, itemSnapshot) => {
+    const content = itemSnapshot.data();
+    const {id} = itemSnapshot;
+    acc[id] = content;
+    return acc;
+  },{})
+  return Object.values(lovedItemsMap);
+}

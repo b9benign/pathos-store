@@ -43,7 +43,7 @@ const Navigation = () => {
                     <Link  className="nav-utility-icon-wrapper" to="/">
                         <HomeIcon  className="nav-home-icon"/>
                     </Link>
-                    <Link  className="nav-utility-icon-wrapper">
+                    <Link  className="nav-utility-icon-wrapper" to="/loved">
                         <LovedIcon  className="nav-utility-icon"/>
                     </Link>
                     <Link  className="nav-utility-icon-wrapper" onClick={toggleCartVisibility}>
