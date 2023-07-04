@@ -1,12 +1,41 @@
 .loved-page-container {
-    padding:10px;
     width:100%;
-    max-width:2560px;
-    margin: 300px auto;
+    margin: 0 auto;
     justify-content: center;
+    min-height:60vh;
+    margin-top:65px;
+    padding-bottom:55px;
 
     .loved-page-content-spacer {
         justify-content: space-between;
         margin:0 auto;
+        max-width:2560px;
+        padding:0 10px;
+
+        .loved-page-items-container {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            column-gap: 10px;
+            row-gap: 25px;
+            margin:0 auto;
+            max-width:1200px;
+            
+
+            .loved-page-notification-wrapper {
+                min-width:250px;
+                position: absolute;
+                top:20%;
+                left:50%;
+                transform: translate(-50%);
+                font-size:30px;
+                font-weight: 200;
+                text-align: justify;
+            }
+        }
+    }
+    @media (max-width:450px) {
+        .loved-page-items-container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+        }
     }
 }

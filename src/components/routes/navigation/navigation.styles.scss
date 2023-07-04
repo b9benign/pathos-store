@@ -28,7 +28,7 @@
             }
 
             &.cart-active {
-                fill:#4dfc65;
+                fill:rgb(112, 184, 103);
             }
         }
         &:last-of-type {
@@ -49,12 +49,22 @@
             cursor: pointer;
         }
     }
+    .nav-login-button {
+        fill:white;
+        margin: 5px 5px 0px -12px;
+        height:24px;
+
+        &:hover {
+            fill:rgb(112, 184, 103);
+            cursor: pointer;
+        }
+    }
 }
 .nav-category-link {
     margin-left:20px;
     text-decoration: none;
     color:white;
-    font-weight:300;
+    font-weight:100;
 
     &:hover {
         color:#c2c2c2;
@@ -65,7 +75,6 @@
     height:120px;
     width:75px;
     margin-bottom:-11px;
-    fill:black;
 }
 
 @media (max-width:450px) {

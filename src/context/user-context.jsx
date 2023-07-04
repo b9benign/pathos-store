@@ -16,13 +16,14 @@ const UserProvider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = AuthStateChangeListener((user) => {
+            //fires thrice upon change, needs improvement/ fixing
             if (user) {
                 createUserDocumentFromAuth(user);
             }
             setCurrentUser(user);
         });
         return unsubscribe;
-    },[])
+    },[currentUser])
 
     return (
         <UserContext.Provider value={value}>

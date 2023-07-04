@@ -2,6 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../../context/user-context';
 import { CartContext } from '../../../context/cart-context';
+import { LovedItemContext } from '../../../context/loved-context';
 import { logUserOut, auth } from '../../../utils/fire-utils';
 
 
@@ -24,6 +25,11 @@ const Navigation = () => {
         logUserOut(auth);
     }
     const {toggleCartVisibility, isCartOpen} = useContext(CartContext);
+    const {fetchLovedList} = useContext(LovedItemContext);
+
+    const handleLovedIconClick = () => {
+        fetchLovedList();
+    }
 
     return(
         <div className="navigation-container">
@@ -43,7 +49,7 @@ const Navigation = () => {
                     <Link  className="nav-utility-icon-wrapper" to="/">
                         <HomeIcon  className="nav-home-icon"/>
                     </Link>
-                    <Link  className="nav-utility-icon-wrapper" to="/loved">
+                    <Link  className="nav-utility-icon-wrapper" to="/loved" onClick={handleLovedIconClick}>
                         <LovedIcon  className="nav-utility-icon"/>
                     </Link>
                     <Link  className="nav-utility-icon-wrapper" onClick={toggleCartVisibility}>
@@ -54,7 +60,7 @@ const Navigation = () => {
                         ?   <LogoutIcon className="nav-logout-button" onClick={logOutHandler}/>
                         :   (
                             <Link  className="nav-utility-icon-wrapper" to="auth">
-                                <LoginIcon  className="nav-utility-icon"/>
+                                <LoginIcon  className="nav-login-button"/>
                             </Link>
                             )
                     }
