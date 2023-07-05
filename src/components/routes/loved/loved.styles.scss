@@ -22,15 +22,26 @@
             
 
             .loved-page-notification-wrapper {
-                min-width:250px;
                 position: absolute;
+                padding:0 10px;
                 top:20%;
                 left:50%;
                 transform: translate(-50%);
                 font-size:30px;
                 font-weight: 200;
                 text-align: justify;
+                overflow:hidden;
             }
+        }
+    }
+    @media (max-width:900px) {
+        .loved-page-items-container {
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)) !important;
+        }
+    }
+    @media (max-width:585px) {
+        .loved-page-items-container {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
         }
     }
     @media (max-width:450px) {

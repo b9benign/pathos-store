@@ -18,10 +18,15 @@
             margin:0 auto;
             max-width:1200px;
         }
-
-        .store-page-filter-container {
-            position:fixed;
-            right:0;
+    }
+    @media (max-width:900px) {
+        .store-products-container {
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)) !important;
+        }
+    }
+    @media (max-width:585px) {
+        .store-products-container {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
         }
     }
     @media (max-width:450px) {

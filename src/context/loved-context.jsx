@@ -5,21 +5,17 @@ import { UserContext } from "./user-context";
 
 
 export const LovedItemContext = createContext({
-    isItemLoved: false,
     lovedList: [],
     lovedIdList: [],
-    setIsItemLoved: () => {},
     toggleIsItemLoved: () => {},
-    setLovedIdList: () => {},
     fetchLovedList: () => {},
-    fetchLovedIdsList: () => {}
+    searchForLove: () => {}
 })
 
 
 const LovedProvider = ({children}) => {
 
     const defaultLovedList = [];
-    const [isItemLoved, setIsItemLoved] = useState(false);
     const [lovedList, setLovedList] = useState(defaultLovedList);
     const [lovedIdList, setLovedIdList] = useState([]);
     const {currentUser} = useContext(UserContext);
@@ -48,19 +44,13 @@ const LovedProvider = ({children}) => {
           const tempIds = tempList.map((item) => {
             return item.id;
           })
-          console.log(tempIds);
+          setLovedIdList(tempIds);
         };
         if (currentUser) {
           unsubscribe();
         }
       }, [currentUser]);
 
-      const fetchLovedList = async () => {
-        if(currentUser){
-          const temp = await getLovedList(currentUser);
-          setLovedList(temp);
-        }
-      }
       const fetchLovedIdsList = async () => {
         if(currentUser){
           const tempList = await getLovedList(currentUser);
@@ -71,13 +61,29 @@ const LovedProvider = ({children}) => {
         }
       }
 
+      const fetchLovedList = async () => {
+        if(currentUser){
+          const temp = await getLovedList(currentUser);
+          setLovedList(temp);
+        }
+      }
+
+      const searchForLove = (itemToCheck) => {
+        if(lovedList.includes(itemToCheck)){
+          return true;
+        }
+        return false;
+      }
+
+      
+
+
     const value = {
-        isItemLoved,
         toggleIsItemLoved,
         lovedList,
-        setIsItemLoved,
-        fetchLovedIdsList,
         fetchLovedList,
+        fetchLovedIdsList,
+        searchForLove,
         lovedIdList
     }
 
@@ -89,3 +95,4 @@ const LovedProvider = ({children}) => {
 }
 
 export default LovedProvider;
+

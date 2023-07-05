@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
+import { ReactComponent as LovedIconFilled } from '../../assets/vector-graphics/heart-icon-filled.svg';
 import { LovedItemContext } from '../../context/loved-context';
 
 import ProductModal from '../product-modal/product-modal.component';
@@ -13,23 +14,27 @@ const ProductPreview = ({item}) => {
     const {name, id, price, brand, category, gender} = item;
     const [modalState, setModalState] = useState(false);
     const modalUtil = {modalState, setModalState};
-
-    const {toggleIsItemLoved} = useContext(LovedItemContext);
+    const {toggleIsItemLoved, lovedIdList, fetchLovedIdsList} = useContext(LovedItemContext);
+    const [currentlyLoved, setCurrentlyLoved] = useState(lovedIdList.includes(id));
 
     const toggleModal = () => {
         setModalState(true);
     }
-    const toggleLovedHandler = () => {
+    const toggleLovedHandler = async () => { //bug: when store-page is refreshed, hearted items won't be displayed as such
         toggleIsItemLoved(item);
+        await fetchLovedIdsList();
+        setCurrentlyLoved(!currentlyLoved);
     }
-
 
     return (
         <>
         
         <div className="product-preview-container">
-
-            <LovedIcon className="product-preview-heart-icon" onClick={toggleLovedHandler}/>
+                 
+            { currentlyLoved ?
+                <LovedIconFilled className="product-preview-heart-filled-icon" onClick={toggleLovedHandler}/> :
+                <LovedIcon className="product-preview-heart-icon" onClick={toggleLovedHandler}/>
+            }
             <div className="product-preview-image-container"  onClick={toggleModal}>
                 <img 
                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)} 

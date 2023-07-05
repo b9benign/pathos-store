@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Navigation from './components/routes/navigation/navigation.component';
 import AuthPage from './components/routes/authentication/authentication.component';
 import HomePage from './components/routes/home/home.component';
@@ -8,6 +7,7 @@ import StorePage from './components/routes/store/store.component';
 import Footer from './components/footer/footer.component';
 import CartPreview from './components/cart-preview/cart-preview-component';
 import LovedPage from './components/routes/loved/loved.component';
+import './App.css';
 
 
 function App() {

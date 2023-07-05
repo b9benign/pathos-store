@@ -15,6 +15,25 @@
         &:hover {
             transform:scale(1.1);
         }
+        &:active {
+            transform:scale(0.75);
+        }
+    }
+    .product-preview-heart-filled-icon {
+        position: absolute;
+        top:5px;
+        right:7px;
+        cursor: pointer;
+        transition: 200ms;
+        z-index:321;
+        fill:var(--mid-shade);
+
+        &:hover {
+            transform:scale(1.1);
+        }
+        &:active {
+            transform:scale(0.75);
+        }
     }
 
     .product-preview-image-container {

@@ -8,12 +8,12 @@ const AuthPage = () => {
         <>
             <div className="authpage-container">
                 <SignInForm />
-                <SignUpForm /> 
+                <SignUpForm />
             </div>
-              
+
         </>
     )
-    
+
 }
 
 export default AuthPage;

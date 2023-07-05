@@ -1,6 +1,7 @@
 .navigation-container {
     height:55px;
     width:100%;
+    min-width:335px;
     background-color:var(--dark-shade);
     position: fixed;
     z-index:999;
@@ -14,6 +15,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        padding:0 10px;
     }
     .nav-utility-icon-wrapper {
         height:48px;
@@ -41,7 +43,7 @@
     }
     .nav-logout-button {
         fill:white;
-        margin: 5px 5px 0px -12px;
+        margin: 5px 0px 0px -12px;
         height:24px;
 
         &:hover {
@@ -51,7 +53,7 @@
     }
     .nav-login-button {
         fill:white;
-        margin: 5px 5px 0px -12px;
+        margin: 5px 0px 0px -12px;
         height:24px;
 
         &:hover {
@@ -61,10 +63,10 @@
     }
 }
 .nav-category-link {
-    margin-left:20px;
     text-decoration: none;
     color:white;
     font-weight:100;
+    margin-right:25px;
 
     &:hover {
         color:#c2c2c2;
@@ -98,7 +100,7 @@
             }
         }
         .nav-category-link {
-            font-weight: 100;
+            margin-right:10px;
         }
     }
 }
