@@ -1,5 +1,8 @@
 import CustomButton from '../custom-button/custom-button.component';
 // import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/cart-context';
+
 import './product-modal-table.styles.scss';
 
 
@@ -7,6 +10,22 @@ const ProductModalTable = ({item}) => {
 
     const shoeSizes = [37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
     const {name, brand} = item;
+    const {addItemToCart, cartItems} = useContext(CartContext);
+    const [shoeSize, setShoeSize] = useState();
+
+
+    const sizeHandler = (e) => {
+        const {value} = e.target;
+        setShoeSize(value);
+    }
+
+    const addHandler = () => {
+        if(!shoeSize){
+            return alert('Please select a size.')
+        }
+        addItemToCart(item, shoeSize);
+        setShoeSize();
+    }
 
     return (
         <div className="pm-table-container">
@@ -20,7 +39,7 @@ const ProductModalTable = ({item}) => {
             <div className="pm-product-sizes-container">
                 {
                     shoeSizes.map((size, id) => {
-                        return (<div className="pm-product-size" key={id} value={size}>{size}</div>);
+                        return (<button className={`pm-product-size ${shoeSize === size.toString() && 'active-shoe-size'}`} key={id} value={size} onClick={sizeHandler}>{size}</button>);
                     })
                 }
             </div>
@@ -28,7 +47,7 @@ const ProductModalTable = ({item}) => {
       
             <div className="pm-buttons-container">
                 <CustomButton buttonType='light'>Save</CustomButton>
-                <CustomButton buttonType='dark' className="pm-button">Add to Cart</CustomButton>
+                <CustomButton buttonType='dark' className="pm-button" onClick={addHandler}>Add to Cart</CustomButton>
             </div>
 
         </div>

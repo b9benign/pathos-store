@@ -8,6 +8,7 @@ import Footer from './components/footer/footer.component';
 import CartPreview from './components/cart-preview/cart-preview-component';
 import LovedPage from './components/routes/loved/loved.component';
 import './App.css';
+import CheckoutPage from './components/routes/checkout/checkout.component';
 
 
 function App() {
@@ -18,10 +19,11 @@ function App() {
         <CartPreview />
         <Routes>
             <Route path ="/" index element={<HomePage />} />
-            <Route path="/auth" element={< AuthPage/>} />
-            <Route path="/about" element={< AboutPage/>} />
-            <Route path="/store" element={< StorePage/>} />
-            <Route path="/loved" element={<LovedPage/>} />
+            <Route path="/auth" element={< AuthPage />} />
+            <Route path="/about" element={< AboutPage />} />
+            <Route path="/store" element={< StorePage />} />
+            <Route path="/loved" element={<LovedPage />} />
+            <Route path='/checkout' element={<CheckoutPage />}/>
         </Routes>
       </div>
     <Footer />

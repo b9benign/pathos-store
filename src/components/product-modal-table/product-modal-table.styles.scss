@@ -4,6 +4,7 @@
     padding: 10px;
     display:flex;
     flex-direction:column;
+    z-index:999;
 
     .pm-product-sizes-container {
         display:grid;
@@ -17,19 +18,26 @@
             flex-direction: column;
             justify-content: center;
             aspect-ratio:1/1;
+            align-items: center;
             height:48px;
-            text-align: center;
-            border-radius:50%;
             color:var(--dark-shade);
             font-weight:200;
             font-size:20px;
-            border:1px solid var(--dark-shade);
+            border:1px dashed var(--dark-shade);
             transition: 300ms;
+            border-radius:50%;
+            padding-right:8px;
 
             &:hover {
                 cursor: pointer;
                 border-radius:35%;
             }
+        }
+        .active-shoe-size {
+            border-radius:35%;
+            border:1px dashed black;
+            box-shadow:2px 2px 2px gray;
+            // color:white;
         }
     }
     .pm-buttons-container {

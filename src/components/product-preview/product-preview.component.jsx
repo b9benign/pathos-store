@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
 import { ReactComponent as LovedIconFilled } from '../../assets/vector-graphics/heart-icon-filled.svg';
 import { LovedItemContext } from '../../context/loved-context';
@@ -25,8 +25,8 @@ const ProductPreview = ({item}) => {
         await fetchLovedIdsList();
         setCurrentlyLoved(!currentlyLoved);
     }
-
     return (
+        
         <>
         
         <div className="product-preview-container">

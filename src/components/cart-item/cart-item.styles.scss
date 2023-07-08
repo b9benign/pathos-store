@@ -1,0 +1,103 @@
+.cart-preview-item-container {
+    position: relative;
+    // border: 2px solid green;
+    width: 95%;
+    height: calc(100% - 60px);
+    margin: 0 auto 0 auto;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+    .cart-preview-item {
+
+        .cart-item-container {
+            width:100%;
+            height:75px;
+            margin-bottom:5px;
+            background-color: rgba(255, 255, 255, 0.03);
+            display:flex;
+            flex-direction: row;
+            position: relative;
+
+            .cart-item-image-wrapper {
+                position: relative;
+
+                .cart-item-product-image {
+                    height:75px;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    margin-top:-5px;
+                    z-index:98321;
+                }
+                .cart-item-product-penunsen {
+                    position: absolute;
+                    left:5px;
+                    top:0;
+                    font-size: 25px;
+                    font-weight:100;
+                    color:gray;
+                    z-index:1;
+                }    
+            }
+
+            .cart-item-info-container {
+                color:lightgray;
+
+                .cart-item-info-name {
+                    font-weight: 300;
+                }
+                .cart-item-info-brand {
+                    font-weight: 100;
+                }
+                .cart-item-info-category {
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    font-size:14px;
+                }
+            }
+            
+            .cart-item-quantity-counter {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right:0;
+                top:5px;
+
+                .cart-item-counter-button {
+                    background:none;
+                    border:none;
+                    color:gray;
+                    font-size:18px;
+                    transition: 150ms;
+
+                    &:nth-of-type(even) {
+                        margin-top:-10px;
+                    }
+                    &:nth-of-type(odd) {
+                        margin-bottom:-10px;
+                    }
+
+                    &:hover {
+                        cursor:pointer;
+                        transform: scale(1.1);
+                        color:white;
+                    }
+                    &:active {
+                        transform: scale(0.9);
+                    }
+                }
+
+                .cart-item-quantity-display {
+                    color:var(--light-shade);
+                    pointer-events: none;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}

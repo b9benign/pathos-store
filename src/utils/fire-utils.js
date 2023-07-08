@@ -108,7 +108,7 @@ export const createGoogleUserDoc = async (googleUser) => {
 }
 
 
-// cart/ loved db integration
+// loved
 export const toggleLovedItem = async (itemToToggle, userAuth) => {
   const {uid} = userAuth;
   const {id, name, price, category, brand, gender} = itemToToggle;
@@ -142,3 +142,19 @@ export const getLovedList = async (userAuth) => {
   },{})
   return Object.values(lovedItemsMap);
 }
+
+// cart
+// export const incrementCartItem = async (userAuth, itemToAdd) => {
+//   const itemDocRef = doc(db, 'users', userAuth.uid, 'cart');
+//   const itemSnapshot = await getDoc(itemDocRef);
+// }
+
+// export const getCartItems = async (userAuth) => {
+//   const cartColRef = collection(db, 'users', userAuth.uid, 'cart');
+//   const q = query(cartColRef);
+//   const querySnapshot = await getDocs(q);
+
+//   const cartItemsMap = querySnapshot.docs.reduce((acc, itemSnapShot) => {
+
+//   })
+// }

@@ -1,20 +1,28 @@
 const STORE_DATA = [
         // 1/6 running
         {
-            id:1,
-            category:'Running',
-            name:'Model 3',
-            price:110,
-            brand:'Nike',
-            gender:'men'
-        },
-        {
             id:2,
             category:'Running',
             name:'Sixer',
             price:95,
             brand:'Nike',
             gender:'men'
+        },
+        {
+            id:6,
+            category:'Running',
+            name:'Superb 7',
+            price:70,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:7,
+            category:'Running',
+            name:'Airflow',
+            price:80,
+            brand:'Adidas',
+            gender:'women'
         },
         {
             id:3,
@@ -30,7 +38,7 @@ const STORE_DATA = [
             name:'Finisher',
             price:100,
             brand:'Nike',
-            gender:'men'
+            gender:'women'
         },
         {
             id:5,
@@ -38,24 +46,7 @@ const STORE_DATA = [
             name:'Strafer 8',
             price:110,
             brand:'Nike',
-            gender:'men'
-        },
-        // 2/6 running
-        {
-            id:6,
-            category:'Running',
-            name:'Superb 7',
-            price:70,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:7,
-            category:'Running',
-            name:'Airflow',
-            price:80,
-            brand:'Adidas',
-            gender:'men'
+            gender:'women'
         },
         {
             id:8,
@@ -63,6 +54,38 @@ const STORE_DATA = [
             name:'Sprinter',
             price:65,
             brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:22,
+            category:'Running',
+            name:'Cloudnova',
+            price:170,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:40,
+            category:'Lifestyle',
+            name:'Basilisk',
+            price:95,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:32,
+            category:'Lifestyle',
+            name:'Allstar',
+            price:90,
+            brand:'Nike',
+            gender:'women'
+        },
+        {
+            id:1,
+            category:'Running',
+            name:'Model 3',
+            price:110,
+            brand:'Nike',
             gender:'men'
         },
         {
@@ -88,7 +111,7 @@ const STORE_DATA = [
             name:'Jumpstar',
             price:110,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:12,
@@ -104,7 +127,7 @@ const STORE_DATA = [
             name:'Special 99',
             price:135,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:14,
@@ -122,7 +145,55 @@ const STORE_DATA = [
             brand:'Jordan',
             gender:'men'
         },
-        // 4/6 running
+        {
+            id:18,
+            category:'Running',
+            name:'Retrowave 83',
+            price:70,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:33,
+            category:'Lifestyle',
+            name:'Regular 230',
+            price:95,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:23,
+            category:'Running',
+            name:'Helixmaster',
+            price:155,
+            brand:'ON',
+            gender:'women'
+        },
+        {
+            id:24,
+            category:'Running',
+            name:'Hyperdust',
+            price:160,
+            brand:'ON',
+            gender:'women'
+        },
+        {
+            id:25,
+            category:'Running',
+            name:'Slammer',
+            price:160,
+            brand:'ON',
+            gender:'women'
+        },
+        // 6/6 running
+        {
+            id:28,
+            category:'Running',
+            name:'Sk8-hi',
+            price:60,
+            brand:'Vans',
+            gender:'women'
+        },
         {
             id:16,
             category:'Running',
@@ -137,97 +208,7 @@ const STORE_DATA = [
             name:'Rotor',
             price:55,
             brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:18,
-            category:'Running',
-            name:'Retrowave 83',
-            price:70,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:19,
-            category:'Running',
-            name:'Omega',
-            price:65,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:20,
-            category:'Running',
-            name:'Salazar',
-            price:60,
-            brand:'New Balance',
-            gender:'men'
-        },
-        // 5/6 running
-        {
-            id:21,
-            category:'Running',
-            name:'Superflux',
-            price:140,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:22,
-            category:'Running',
-            name:'Cloudnova',
-            price:170,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:23,
-            category:'Running',
-            name:'Helixmaster',
-            price:155,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:24,
-            category:'Running',
-            name:'Hyperdust',
-            price:160,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:25,
-            category:'Running',
-            name:'Slammer',
-            price:160,
-            brand:'ON',
-            gender:'men'
-        },
-        // 6/6 running
-        {
-            id:26,
-            category:'Running',
-            name:'Chilly',
-            price:60,
-            brand:'Vans',
-            gender:'men'
-        },
-        {
-            id:27,
-            category:'Running',
-            name:'Millenium',
-            price:65,
-            brand:'Vans',
-            gender:'men'
-        },
-        {
-            id:28,
-            category:'Running',
-            name:'Sk8-hi',
-            price:60,
-            brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:29,
@@ -243,7 +224,7 @@ const STORE_DATA = [
             name:'Model 97',
             price:55,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         // lifestyle
         {
@@ -255,20 +236,12 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:32,
+            id:39,
             category:'Lifestyle',
-            name:'Allstar',
+            name:'Player One',
             price:90,
-            brand:'Nike',
-            gender:'men'
-        },
-        {
-            id:33,
-            category:'Lifestyle',
-            name:'Regular 230',
-            price:95,
-            brand:'Nike',
-            gender:'men'
+            brand:'Adidas',
+            gender:'women'
         },
         {
             id:34,
@@ -279,21 +252,52 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:35,
-            category:'Lifestyle',
-            name:'Yakuza 11',
-            price:100,
-            brand:'Nike',
+            id:19,
+            category:'Running',
+            name:'Omega',
+            price:65,
+            brand:'New Balance',
+            gender:'women'
+        },
+        {
+            id:20,
+            category:'Running',
+            name:'Salazar',
+            price:60,
+            brand:'New Balance',
+            gender:'women'
+        },
+        {
+            id:21,
+            category:'Running',
+            name:'Superflux',
+            price:140,
+            brand:'ON',
             gender:'men'
         },
-        // 2/6 lifestyle
         {
-            id:36,
-            category:'Lifestyle',
-            name:'Anno 07',
-            price:105,
-            brand:'Adidas',
+            id:27,
+            category:'Running',
+            name:'Millenium',
+            price:65,
+            brand:'Vans',
             gender:'men'
+        },
+        {
+            id:56,
+            category:'Lifestyle',
+            name:'Kool 03',
+            price:80,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:57,
+            category:'Lifestyle',
+            name:'Retro 87',
+            price:85,
+            brand:'Vans',
+            gender:'women'
         },
         {
             id:37,
@@ -312,29 +316,36 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:39,
-            category:'Lifestyle',
-            name:'Player One',
-            price:90,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:40,
-            category:'Lifestyle',
-            name:'Basilisk',
-            price:95,
-            brand:'Adidas',
-            gender:'men'
-        },
-        // 3/6 lifestyle
-        {
             id:41,
             category:'Lifestyle',
             name:'Gummo',
             price:130,
             brand:'Jordan',
             gender:'men'
+        },
+        {
+            id:35,
+            category:'Lifestyle',
+            name:'Yakuza 11',
+            price:100,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:36,
+            category:'Lifestyle',
+            name:'Anno 07',
+            price:105,
+            brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:26,
+            category:'Running',
+            name:'Chilly',
+            price:60,
+            brand:'Vans',
+            gender:'women'
         },
         {
             id:42,
@@ -345,28 +356,12 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:43,
-            category:'Lifestyle',
-            name:'Menace',
-            price:120,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
-            id:44,
-            category:'Lifestyle',
-            name:'Flight',
-            price:85,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
             id:45,
             category:'Lifestyle',
             name:'Yeet Feet',
             price:110,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         // 4/6 lifestyle
         {
@@ -375,63 +370,6 @@ const STORE_DATA = [
             name:'Hera',
             price:90,
             brand:'ON',
-            gender:'men'
-        },
-        {
-            id:47,
-            category:'Lifestyle',
-            name:'Jupiter',
-            price:85,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:48,
-            category:'Lifestyle',
-            name:'Odin',
-            price:110,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:49,
-            category:'Lifestyle',
-            name:'Zuko',
-            price:110,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:50,
-            category:'Lifestyle',
-            name:'Bertram 09',
-            price:90,
-            brand:'ON',
-            gender:'men'
-        },
-        // 5/6 lifestyle
-        {
-            id:51,
-            category:'Lifestyle',
-            name:'Dizzy',
-            price:55,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:52,
-            category:'Lifestyle',
-            name:'Vertigo',
-            price:55,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:53,
-            category:'Lifestyle',
-            name:'Hireme 69',
-            price:60,
-            brand:'New Balance',
             gender:'men'
         },
         {
@@ -448,24 +386,104 @@ const STORE_DATA = [
             name:'Koloss',
             price:65,
             brand:'New Balance',
+            gender:'women'
+        },
+        {
+            id:43,
+            category:'Lifestyle',
+            name:'Menace',
+            price:120,
+            brand:'Jordan',
+            gender:'men'
+        },
+        {
+            id:44,
+            category:'Lifestyle',
+            name:'Flight',
+            price:85,
+            brand:'Jordan',
+            gender:'women'
+        },
+        {
+            id:71,
+            category:'Court',
+            name:'big-O',
+            price:95,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:47,
+            category:'Lifestyle',
+            name:'Jupiter',
+            price:85,
+            brand:'ON',
+            gender:'women'
+        },
+        {
+            id:51,
+            category:'Lifestyle',
+            name:'Dizzy',
+            price:55,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:52,
+            category:'Lifestyle',
+            name:'Vertigo',
+            price:55,
+            brand:'New Balance',
+            gender:'women'
+        },
+        {
+            id:53,
+            category:'Lifestyle',
+            name:'Hireme 69',
+            price:60,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:72,
+            category:'Court',
+            name:'Doubletime',
+            price:90,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:73,
+            category:'Court',
+            name:'Tripletime',
+            price:95,
+            brand:'ON',
             gender:'men'
         },
         // 6/6 lifestyle 
         {
-            id:56,
+            id:48,
             category:'Lifestyle',
-            name:'Kool 03',
-            price:80,
-            brand:'Vans',
+            name:'Odin',
+            price:110,
+            brand:'ON',
+            gender:'women'
+        },
+        {
+            id:49,
+            category:'Lifestyle',
+            name:'Zuko',
+            price:110,
+            brand:'ON',
             gender:'men'
         },
         {
-            id:57,
+            id:50,
             category:'Lifestyle',
-            name:'Retro 87',
-            price:85,
-            brand:'Vans',
-            gender:'men'
+            name:'Bertram 09',
+            price:90,
+            brand:'ON',
+            gender:'women'
         },
         {
             id:58,
@@ -473,7 +491,7 @@ const STORE_DATA = [
             name:'Samsa',
             price:80,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:59,
@@ -481,7 +499,7 @@ const STORE_DATA = [
             name:'The Cure',
             price:90,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:60,
@@ -501,12 +519,126 @@ const STORE_DATA = [
             gender:'men'
         },
         {
+            id:65,
+            category:'Court',
+            name:'Sipuku',
+            price:140,
+            brand:'Nike',
+            gender:'women'
+        },
+        // 2/6 court
+        {
+            id:66,
+            category:'Court',
+            name:'Topper-Flopper',
+            price:130,
+            brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:67,
+            category:'Court',
+            name:'Addos',
+            price:135,
+            brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:68,
+            category:'Court',
+            name:'Ruger 22',
+            price:140,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:90,
+            category:'Court',
+            name:'Superlight',
+            price:65,
+            brand:'Vans',
+            gender:'women'
+        },
+        {
+            id:91,
+            category:'Skate',
+            name:'Superlight',
+            price:65,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:92,
+            category:'Skate',
+            name:'Anticipate',
+            price:75,
+            brand:'Nike',
+            gender:'men'
+        },
+        {
+            id:69,
+            category:'Court',
+            name:'Sixshooter',
+            price:140,
+            brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:70,
+            category:'Court',
+            name:'Quickdraw .45',
+            price:115,
+            brand:'Adidas',
+            gender:'men'
+        },
+        {
+            id:74,
+            category:'Court',
+            name:'Quadrupletime',
+            price:80,
+            brand:'ON',
+            gender:'men'
+        },
+        {
+            id:75,
+            category:'Court',
+            name:'Veryfasttime',
+            price:100,
+            brand:'ON',
+            gender:'women'
+        },
+        // 4/6 court
+        {
+            id:76,
+            category:'Court',
+            name:'Steampunk 500',
+            price:100,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
+            id:77,
+            category:'Court',
+            name:'Dieselpunk 33',
+            price:90,
+            brand:'New Balance',
+            gender:'women'
+        },
+        {
+            id:78,
+            category:'Court',
+            name:'Retrofuturism',
+            price:80,
+            brand:'New Balance',
+            gender:'men'
+        },
+        {
             id:62,
             category:'Court',
             name:'Court Style',
             price:130,
             brand:'Nike',
-            gender:'men'
+            gender:'women'
         },
         {
             id:63,
@@ -525,127 +657,12 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:65,
-            category:'Court',
-            name:'Sipuku',
-            price:140,
-            brand:'Nike',
-            gender:'men'
-        },
-        // 2/6 court
-        {
-            id:66,
-            category:'Court',
-            name:'Topper-Flopper',
-            price:130,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:67,
-            category:'Court',
-            name:'Addos',
-            price:135,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:68,
-            category:'Court',
-            name:'Ruger 22',
-            price:140,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:69,
-            category:'Court',
-            name:'Sixshooter',
-            price:140,
-            brand:'Adidas',
-            gender:'men'
-        },
-        {
-            id:70,
-            category:'Court',
-            name:'Quickdraw .45',
-            price:115,
-            brand:'Adidas',
-            gender:'men'
-        },
-        // 3/6 court
-        {
-            id:71,
-            category:'Court',
-            name:'big-O',
-            price:95,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:72,
-            category:'Court',
-            name:'Doubletime',
-            price:90,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:73,
-            category:'Court',
-            name:'Tripletime',
-            price:95,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:74,
-            category:'Court',
-            name:'Quadrupletime',
-            price:80,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:75,
-            category:'Court',
-            name:'Veryfasttime',
-            price:100,
-            brand:'ON',
-            gender:'men'
-        },
-        // 4/6 court
-        {
-            id:76,
-            category:'Court',
-            name:'Steampunk 500',
-            price:100,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:77,
-            category:'Court',
-            name:'Dieselpunk 33',
-            price:90,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
-            id:78,
-            category:'Court',
-            name:'Retrofuturism',
-            price:80,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
             id:79,
             category:'Court',
             name:'Fancypants',
             price:85,
             brand:'New Balance',
-            gender:'men'
+            gender:'women'
         },
         {
             id:80,
@@ -662,7 +679,7 @@ const STORE_DATA = [
             name:'Notthecountry',
             price:155,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:82,
@@ -672,30 +689,7 @@ const STORE_DATA = [
             brand:'Jordan',
             gender:'men'
         },
-        {
-            id:83,
-            category:'Court',
-            name:'Flipper 900',
-            price:190,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
-            id:84,
-            category:'Court',
-            name:'Schmordan',
-            price:210,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
-            id:85,
-            category:'Court',
-            name:'Blazer 1',
-            price:170,
-            brand:'Jordan',
-            gender:'men'
-        },
+        
         // 6/6 court
         {
             id:86,
@@ -711,7 +705,7 @@ const STORE_DATA = [
             name:'Great Plans',
             price:80,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:88,
@@ -719,7 +713,7 @@ const STORE_DATA = [
             name:'Cool Cans',
             price:90,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:89,
@@ -730,29 +724,28 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:90,
+            id:83,
             category:'Court',
-            name:'Superlight',
-            price:65,
-            brand:'Vans',
-            gender:'men'
-        },
-        // 1/6 Skate
-        {
-            id:91,
-            category:'Skate',
-            name:'Superlight',
-            price:65,
-            brand:'Nike',
-            gender:'men'
+            name:'Flipper 900',
+            price:190,
+            brand:'Jordan',
+            gender:'women'
         },
         {
-            id:92,
-            category:'Skate',
-            name:'Anticipate',
-            price:75,
-            brand:'Nike',
+            id:84,
+            category:'Court',
+            name:'Schmordan',
+            price:210,
+            brand:'Jordan',
             gender:'men'
+        },
+        {
+            id:85,
+            category:'Court',
+            name:'Blazer 1',
+            price:170,
+            brand:'Jordan',
+            gender:'women'
         },
         {
             id:93,
@@ -760,7 +753,7 @@ const STORE_DATA = [
             name:'Edgegrinder',
             price:80,
             brand:'Nike',
-            gender:'men'
+            gender:'women'
         },
         {
             id:94,
@@ -776,7 +769,7 @@ const STORE_DATA = [
             name:'Minze',
             price:75,
             brand:'Nike',
-            gender:'men'
+            gender:'women'
         },
         // 2/6 Skate
         {
@@ -793,7 +786,23 @@ const STORE_DATA = [
             name:'Benchmark',
             price:130,
             brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:107,
+            category:'Skate',
+            name:'Mid Volume',
+            price:110,
+            brand:'ON',
             gender:'men'
+        },
+        {
+            id:110,
+            category:'Skate',
+            name:'Komplex 4',
+            price:100,
+            brand:'ON',
+            gender:'women'
         },
         {
             id:98,
@@ -801,6 +810,22 @@ const STORE_DATA = [
             name:'Walkman 83',
             price:145,
             brand:'Adidas',
+            gender:'women'
+        },
+        {
+            id:101,
+            category:'Skate',
+            name:'Skyhigh',
+            price:160,
+            brand:'Jordan',
+            gender:'women'
+        },
+        {
+            id:102,
+            category:'Skate',
+            name:'Grounded 90',
+            price:175,
+            brand:'Jordan',
             gender:'men'
         },
         {
@@ -819,30 +844,13 @@ const STORE_DATA = [
             brand:'Adidas',
             gender:'men'
         },
-        // 3/6 skate
-        {
-            id:101,
-            category:'Skate',
-            name:'Skyhigh',
-            price:160,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
-            id:102,
-            category:'Skate',
-            name:'Grounded 90',
-            price:175,
-            brand:'Jordan',
-            gender:'men'
-        },
         {
             id:103,
             category:'Skate',
             name:'Model C-37',
             price:155,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:104,
@@ -850,7 +858,7 @@ const STORE_DATA = [
             name:'Chaser',
             price:160,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:105,
@@ -869,38 +877,7 @@ const STORE_DATA = [
             brand:'ON',
             gender:'men'
         },
-        {
-            id:107,
-            category:'Skate',
-            name:'Mid Volume',
-            price:110,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:108,
-            category:'Skate',
-            name:'Presley 73',
-            price:115,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:109,
-            category:'Skate',
-            name:'Skatemaster',
-            price:90,
-            brand:'ON',
-            gender:'men'
-        },
-        {
-            id:110,
-            category:'Skate',
-            name:'Komplex 4',
-            price:100,
-            brand:'ON',
-            gender:'men'
-        },
+        
         // 5/6 skate
         {
             id:111,
@@ -911,12 +888,28 @@ const STORE_DATA = [
             gender:'men'
         },
         {
+            id:108,
+            category:'Skate',
+            name:'Presley 73',
+            price:115,
+            brand:'ON',
+            gender:'women'
+        },
+        {
+            id:109,
+            category:'Skate',
+            name:'Skatemaster',
+            price:90,
+            brand:'ON',
+            gender:'women'
+        },
+        {
             id:112,
             category:'Skate',
             name:'Viper',
             price:80,
             brand:'New Balance',
-            gender:'men'
+            gender:'women'
         },
         {
             id:113,
@@ -940,7 +933,7 @@ const STORE_DATA = [
             name:'Strafe Wave',
             price:80,
             brand:'New Balance',
-            gender:'men'
+            gender:'women'
         },
         // 6/6 brand
         {
@@ -949,7 +942,23 @@ const STORE_DATA = [
             name:'Checkerboard',
             price:55,
             brand:'Vans',
+            gender:'women'
+        },
+        {
+            id:131,
+            category:'Outdoor',
+            name:'Cloud 7',
+            price:130,
+            brand:'ON',
             gender:'men'
+        },
+        {
+            id:139,
+            category:'Outdoor',
+            name:'Autumn',
+            price:175,
+            brand:'Jordan',
+            gender:'women'
         },
         {
             id:117,
@@ -957,6 +966,23 @@ const STORE_DATA = [
             name:'New Skool',
             price:65,
             brand:'Vans',
+            gender:'women'
+        },
+        
+        {
+            id:120,
+            category:'Skate',
+            name:'York Demo',
+            price:60,
+            brand:'Vans',
+            gender:'men'
+        },
+        {
+            id:121,
+            category:'Outdoor',
+            name:'Terrain',
+            price:145,
+            brand:'Adidas',
             gender:'men'
         },
         {
@@ -973,24 +999,7 @@ const STORE_DATA = [
             name:'Kyle Walker',
             price:70,
             brand:'Vans',
-            gender:'men'
-        },
-        {
-            id:120,
-            category:'Skate',
-            name:'York Demo',
-            price:60,
-            brand:'Vans',
-            gender:'men'
-        },
-        // 1/6 outdoor
-        {
-            id:121,
-            category:'Outdoor',
-            name:'Terrain',
-            price:145,
-            brand:'Adidas',
-            gender:'men'
+            gender:'women'
         },
         {
             id:122,
@@ -998,7 +1007,7 @@ const STORE_DATA = [
             name:'Terraform',
             price:135,
             brand:'Adidas',
-            gender:'men'
+            gender:'women'
         },
         {
             id:123,
@@ -1014,7 +1023,7 @@ const STORE_DATA = [
             name:'Palmer 2008',
             price:150,
             brand:'Adidas',
-            gender:'men'
+            gender:'women'
         },
         {
             id:125,
@@ -1031,7 +1040,7 @@ const STORE_DATA = [
             name:'Tuned 5',
             price:110,
             brand:'Nike',
-            gender:'men'
+            gender:'women'
         },
         {
             id:127,
@@ -1047,6 +1056,15 @@ const STORE_DATA = [
             name:'City Rep TR',
             price:120,
             brand:'Nike',
+            gender:'women'
+        },
+        
+        {
+            id:130,
+            category:'Outdoor',
+            name:'Zoom Fire',
+            price:100,
+            brand:'Nike',
             gender:'men'
         },
         {
@@ -1058,20 +1076,20 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:130,
+            id:140,
             category:'Outdoor',
-            name:'Zoom Fire',
-            price:100,
-            brand:'Nike',
-            gender:'men'
+            name:'Windbreaker',
+            price:220,
+            brand:'Jordan',
+            gender:'women'
         },
-        // 3/6 outdoor
+        // 5/6 outdoor
         {
-            id:131,
+            id:141,
             category:'Outdoor',
-            name:'Cloud 7',
-            price:130,
-            brand:'ON',
+            name:'Vox Populi',
+            price:90,
+            brand:'New Balance',
             gender:'men'
         },
         {
@@ -1088,7 +1106,7 @@ const STORE_DATA = [
             name:'Cloudrift',
             price:140,
             brand:'ON',
-            gender:'men'
+            gender:'women'
         },
         {
             id:134,
@@ -1096,7 +1114,7 @@ const STORE_DATA = [
             name:'Hyperbeast',
             price:145,
             brand:'ON',
-            gender:'men'
+            gender:'women'
         },
         {
             id:135,
@@ -1113,7 +1131,7 @@ const STORE_DATA = [
             name:'Stonefaced',
             price:180,
             brand:'Jordan',
-            gender:'men'
+            gender:'women'
         },
         {
             id:137,
@@ -1132,37 +1150,12 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:139,
-            category:'Outdoor',
-            name:'Autumn',
-            price:175,
-            brand:'Jordan',
-            gender:'men'
-        },
-        {
-            id:140,
-            category:'Outdoor',
-            name:'Windbreaker',
-            price:220,
-            brand:'Jordan',
-            gender:'men'
-        },
-        // 5/6 outdoor
-        {
-            id:141,
-            category:'Outdoor',
-            name:'Vox Populi',
-            price:90,
-            brand:'New Balance',
-            gender:'men'
-        },
-        {
             id:142,
             category:'Outdoor',
             name:'Flikflak',
             price:100,
             brand:'New Balance',
-            gender:'men'
+            gender:'women'
         },
         {
             id:143,
@@ -1186,7 +1179,7 @@ const STORE_DATA = [
             name:'Thunder 4',
             price:90,
             brand:'New Balance',
-            gender:'men'
+            gender:'women'
         },
         // 6/6 outdoor
         {
@@ -1198,28 +1191,12 @@ const STORE_DATA = [
             gender:'men'
         },
         {
-            id:147,
-            category:'Outdoor',
-            name:'Reconstruct',
-            price:115,
-            brand:'Vans',
-            gender:'men'
-        },
-        {
-            id:148,
-            category:'Outdoor',
-            name:'Sk8 Low',
-            price:100,
-            brand:'Vans',
-            gender:'men'
-        },
-        {
             id:149,
             category:'Outdoor',
             name:'Velcro',
             price:120,
             brand:'Vans',
-            gender:'men'
+            gender:'women'
         },
         {
             id:150,
@@ -1229,6 +1206,23 @@ const STORE_DATA = [
             brand:'Vans',
             gender:'men'
         },
+        {
+            id:147,
+            category:'Outdoor',
+            name:'Reconstruct',
+            price:115,
+            brand:'Vans',
+            gender:'women'
+        },
+        {
+            id:148,
+            category:'Outdoor',
+            name:'Sk8 Low',
+            price:100,
+            brand:'Vans',
+            gender:'men'
+        },
+        
     ]
 
 
