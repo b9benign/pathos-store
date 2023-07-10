@@ -5,18 +5,17 @@ import './cart-item.styles.scss';
 
 const CartItem = () => {
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, addItemToCart, removeItemFromCart } = useContext(CartContext);
 
     return (
         <div className="cart-preview-item-container">
             <div className="cart-preview-item">{
                 cartItems.map((cartItem) => {
-                    const { id, name, brand, category, size, gender, price, quantity } = cartItem;
+                    const { name, brand, size, gender, price, quantity } = cartItem;
                     return (
-                        <div className="cart-item-container" key={id + size + name}>
+                        <div className="cart-item-container" key={size + name}>
 
                             <div className="cart-item-image-wrapper">
-                                <div className="cart-item-product-penunsen">${price}</div>
                                 <img
                                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)}
                                     alt="cart item"
@@ -24,13 +23,14 @@ const CartItem = () => {
                             </div>
                             <div className="cart-item-info-container">
                                 <div className="cart-item-info-name">{name}</div>
-                                <div><span className="cart-item-info-brand">{brand} |</span> <span className="cart-item-info-category">{category}</span></div>
+                                <div className="cart-item-info-brand">{brand}</div>
+                                <div className="cart-item-info-price">${price} {size}</div>
                             </div>
 
                             <div className="cart-item-quantity-counter">
-                                <button className="cart-item-counter-button">&and;</button>
+                                <button className="cart-item-counter-button" onClick={() => addItemToCart(cartItem, size)}>&and;</button>
                                 <div className="cart-item-quantity-display">{quantity}</div>
-                                <button className="cart-item-counter-button">&or;</button>
+                                <button className="cart-item-counter-button" onClick={() => removeItemFromCart(cartItem, size)}>&or;</button>
                             </div>
                         </div>
                     )
