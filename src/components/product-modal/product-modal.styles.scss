@@ -17,7 +17,7 @@
         background-color:rgba(0, 0, 0, 0.9);
         top:0;
         position: fixed;
-}
+    }
 
     .product-modal-content-container {
         max-width:750px;
@@ -68,7 +68,7 @@
             width:55%;
             height:100%;
             position: absolute;
-            z-index:3;
+            z-index:1;
 
             .product-modal-displayed-image {
                 aspect-ratio: 1/1;
@@ -86,18 +86,66 @@
     }
     @media (max-width:751px){
         .product-modal-content-container {
-            height:450px;
-            flex-direction: column;
-            aspect-ratio: unset;
-            overflow-y: scroll;
+            height:75vh;
+            max-height:700px;
+            min-height:320px;
+            width:75vw;
+            min-width:320px;
+            overflow-y:scroll;
             overflow-x: hidden;
-            width:min-content;
+            display:flex;
+            flex-direction: column;
+            max-width:450px;
 
             .product-modal-general-item-info {
                 height: 90vh;
                 max-height:300px;
-
+                width:100%;
+                padding:0 10px !important;
+            }
+            .product-modal-active-image {
+                position: absolute !important;
+                left:50% !important;
+                height:120% !important;
+                bottom:0;
             }
         }
     }
+    @media (max-height:590px) {
+        .product-modal-content-container {
+            justify-content: space-between !important;
+
+            .pm-table-container {
+                margin-top:35px;
+            }
+        }
+    }
+    @media (max-height:540px) {
+        .product-modal-content-container {
+            justify-content: space-between !important;
+
+            .pm-table-container {
+                margin-top:70px;
+            }
+        }
+    }
+    @media (max-height:510px) {
+        .product-modal-content-container {
+            justify-content: space-between !important;
+
+            .pm-table-container {
+                margin-top:90px;
+            }
+        }
+    }
+    @media (max-height:480px) {
+        .product-modal-content-container {
+            justify-content: space-between !important;
+
+            .pm-table-container {
+                margin-top:113px;
+            }
+        }
+    }
+    
 }

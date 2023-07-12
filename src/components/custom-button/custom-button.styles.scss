@@ -4,43 +4,38 @@
     border-radius:0;
     border:none;
     cursor:pointer;
-    width:150px;
     font-weight:bold;
     font-size:20px;
     text-transform: uppercase;
-    transition: 100ms;
     border-radius:10px;
+    transition: 300ms;
 
     &.dark-button {
         background-color:var(--dark-shade);
-        border:2px solid var(--dark-shade);
+        border:1px solid var(--dark-shade);
         color:white;
-        box-shadow:1px 1px 0px 0px #000000;
 
         &:hover {
-            background-color:white;
-            color:var(--dark-shade);
+            border-radius:0;
         }
     }
     &.google-button {
-        border:2px solid #070742;
+        border:1px solid #070742;
         background-color:white;
-        box-shadow:2px 2px 0px 0px #070742;
 
         &:hover {
-            background-color:#070742;
-            box-shadow:2px 2px 0 0 black;
+            border-radius:0;
         }
     }
     &.light-button {
         background-color:white;
-        border:2px solid var(--dark-shade);
-        box-shadow:2px 2px 0 0 black;
-        color:var(--dark-shade);
+        border:1px solid var(--dark-shade);
 
         &:hover {
-            background-color:var(--dark-shade);
-            color:white;
+            border-radius:0;
         }
+    }
+    &:active {
+        transform: scale(0.9);
     }
 }

@@ -23,8 +23,8 @@ const CartItem = () => {
                             </div>
                             <div className="cart-item-info-container">
                                 <div className="cart-item-info-name">{name}</div>
-                                <div className="cart-item-info-brand">{brand}</div>
-                                <div className="cart-item-info-price">${price} {size}</div>
+                                <div className="cart-item-info-brand">{brand} | {size}</div>
+                                <div className="cart-item-info-price">${price}</div>
                             </div>
 
                             <div className="cart-item-quantity-counter">

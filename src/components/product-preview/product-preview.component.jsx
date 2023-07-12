@@ -58,10 +58,10 @@ const ProductPreview = ({item}) => {
                 <span className="product-preview-category">{category}</span>
                 <span className="product-preview-price">${price}</span>
             </div>
-
         </div>
+        <ProductModal item={item} modalUtil={modalUtil}/>
 
-           <ProductModal item={item} modalUtil={modalUtil}/>
+           
         </>
     );
 }

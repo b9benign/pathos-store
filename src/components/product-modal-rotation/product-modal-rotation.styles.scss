@@ -1,6 +1,6 @@
 .product-modal-image-rotation {
     height:15%;
-    width:100%;
+    // width:100%;
     margin:0px 3px 5px 0px;
     display:flex;
     justify-content: space-around;
@@ -12,7 +12,7 @@
         border:none;
         background:transparent;
         z-index:30921830921831;
-
+        
         .product-modal-selectable-image {
             aspect-ratio: 1/1;
             height:60%;
@@ -22,10 +22,6 @@
             &:hover {
                 cursor:pointer;
             }
-        }
-        
-        &.pm-last-selected {
-            background-color: red;
         }
     }
 }

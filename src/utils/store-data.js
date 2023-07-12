@@ -1119,7 +1119,7 @@ const STORE_DATA = [
         {
             id:135,
             category:'Outdoor',
-            name:'Cloudmonster v2',
+            name:'Cloudmonster',
             price:125,
             brand:'ON',
             gender:'men'

@@ -23,15 +23,12 @@ const CartProvider = ({ children }) => {
             if (element.hasOwnProperty('quantity') && objectToFind.hasOwnProperty('quantity')) {
                 const { quantity: elementQuantity, ...compArr } = element;
                 const { quantity: objectQuantity, ...compObj } = objectToFind;
-                console.log('both')
                 return JSON.stringify(compArr) === JSON.stringify(compObj);
             }
             else if (element.hasOwnProperty('quantity') && !objectToFind.hasOwnProperty('quantity')) {
-                console.log('only cartItems')
                 const { quantity: elementQuantity, ...compArr } = element;
                 return JSON.stringify(compArr) === JSON.stringify(objectToFind);
             }
-            console.log('default');
             return JSON.stringify(element) === JSON.stringify(objectToFind);
         })
     }

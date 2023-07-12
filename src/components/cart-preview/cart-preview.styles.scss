@@ -15,9 +15,10 @@
         .cart-preview-content-wrapper {
             aspect-ratio: 9/16;
             position: absolute;
-            width: 25%;
-            max-width: 400px;
-            min-width: 250px;
+            height:auto;
+            max-height:600px;
+            min-height:300px;
+            min-width:300px;
             background-color: var(--dark-shade);
             right: 0;
             pointer-events: all;
@@ -32,10 +33,10 @@
 
             .cart-preview-checkout-wrapper {
                 width: 100%;
-                height: 95px;
+                height: 75px;
                 position: absolute;
                 bottom: 0px;
-                background: linear-gradient(180deg, transparent 0%, black 65%);
+                background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9));
                 pointer-events: none;
 
                 .cart-checkout-button {
@@ -65,6 +66,18 @@
     @media (max-width:450px) {
         .cart-preview-spacer {
             height: calc(40vh - 45px);
+        }
+    }
+    @media (max-height:725px) {
+        .cart-preview-content-wrapper {
+            height:85vh !important;
+            max-height:600px !important;
+            min-height:250px !important;
+            min-width:250px;
+
+            .cart-empty-text {
+                margin-top:45% !important;
+            }
         }
     }
 }

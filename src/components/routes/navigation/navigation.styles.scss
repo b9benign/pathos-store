@@ -30,7 +30,7 @@
             }
 
             &.cart-active {
-                fill:rgb(112, 184, 103);
+                fill:rgb(43, 165, 165);
             }
         }
         &:last-of-type {
@@ -88,16 +88,21 @@
             width:0;
         }
         .nav-utility-icon {
-            margin:5px 5px 0 -10px;
+            margin:5px 0px 0 -10px;
         }
         .nav-home-icon {
             height:24px !important;
             fill:white;
             position: relative !important;
+            margin-right:-5px;
             
             &:hover {
                 fill:#c2c2c2;
             }
+        }
+        .nav-logout-button, .nav-login-button {
+            margin-right:-15px;
+            margin-left:-5px;
         }
         .nav-category-link {
             margin-right:10px;
