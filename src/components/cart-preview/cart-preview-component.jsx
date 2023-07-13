@@ -10,7 +10,7 @@ import './cart-preview.styles.scss'
 
 const CartPreview = () => {
 
-    const { isCartOpen, cartItems } = useContext(CartContext);
+    const { isCartOpen, cartItems, toggleCartVisibility} = useContext(CartContext);
 
     if (isCartOpen) {
         return (
@@ -25,7 +25,7 @@ const CartPreview = () => {
                             <>
                                 <CartItem />
                                 <div className="cart-preview-checkout-wrapper">
-                                    <Link className="cart-checkout-button" to="/checkout">Checkout</Link>
+                                    <Link className="cart-checkout-button" to="/checkout" onClick={toggleCartVisibility}>Checkout</Link>
                                 </div>
                             </>
                         }

@@ -1,0 +1,41 @@
+.checkout-page-container {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    min-height:95vh;
+    // border:1px solid black;
+
+    .checkout-page-welcome-banner {
+        background-color: rgb(197, 92, 110);
+        width: 100%;
+        padding-top: 55px;
+        text-align: center;
+
+        .checkout-page-welcome-text {
+            font-size: 18px;
+            padding: 5px;
+            color: white;
+            font-weight: 200;
+        }
+    }
+
+    .checkout-page-spacer {
+        width: 100%;
+        max-width: 2560px;
+        height: auto;
+
+        .checkout-page-items-container {
+            display:flex;
+            flex-direction: column;
+            width:90vw;
+            max-width:600px;
+            min-width:280px;
+            margin:0 auto;
+        }
+    }
+    @media (max-width:450px) {
+        .checkout-page-welcome-banner {
+            padding-top:45px;
+        }
+    }
+}

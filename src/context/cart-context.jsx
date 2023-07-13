@@ -9,7 +9,9 @@ export const CartContext = createContext({
     cartItems: [],
     setCartItems: () => { },
     addItemToCart: () => { },
-    removeItemFromCart: () => { }
+    removeItemFromCart: () => { },
+    toggleCartVisibility: () => { },
+    deleteItemFromCart: ( ) => { }
 });
 
 
@@ -71,21 +73,31 @@ const CartProvider = ({ children }) => {
             size: itemSize
         }
         const itemIndex = indexFinder(cartItems, compItem);
-        const updatedCartItem = {...cartItems[itemIndex], quantity: cartItems[itemIndex].quantity - 1};
+        const updatedCartItem = { ...cartItems[itemIndex], quantity: cartItems[itemIndex].quantity - 1 };
 
-        if(cartItems[itemIndex].quantity > 1) {
+        if (cartItems[itemIndex].quantity > 1) {
             return setCartItems(cartItems => {
                 const temp = [...cartItems];
                 temp[itemIndex] = updatedCartItem;
                 return temp;
             })
-        } else { 
+        } else {
             return setCartItems(cartItems => {
                 const temp = [...cartItems];
                 temp.splice(itemIndex, 1);
                 return temp;
-            })        
+            })
         }
+    }
+    const deleteItemFromCart = (itemToDelete) => {
+        const itemIndex = indexFinder(cartItems, itemToDelete)
+        console.log(itemIndex);
+
+        return setCartItems(cartItems => {
+            const temp = [...cartItems];
+            temp.splice(itemIndex, 1);
+            return temp;
+        });
     }
 
     const value = {
@@ -94,7 +106,8 @@ const CartProvider = ({ children }) => {
         cartItems,
         setCartItems,
         addItemToCart,
-        removeItemFromCart
+        removeItemFromCart,
+        deleteItemFromCart
     };
 
     return (
