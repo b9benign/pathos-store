@@ -1,0 +1,21 @@
+.cic-container {
+    height: 17px;
+    aspect-ratio: 1;
+    background-color: rgb(173, 238, 173);
+    position: absolute;
+    top: -17px;
+    right: 7px;
+    z-index: 83721837917392187;
+    border-radius: 50%;
+    color: black;
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+@media (max-width:450px) {
+    .cic-container {
+        top: -13px;
+    }
+}

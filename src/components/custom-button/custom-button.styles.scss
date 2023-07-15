@@ -9,6 +9,8 @@
     text-transform: uppercase;
     border-radius:10px;
     transition: 300ms;
+    width:90px;
+    max-height:44px;
 
     &.dark-button {
         background-color:var(--dark-shade);

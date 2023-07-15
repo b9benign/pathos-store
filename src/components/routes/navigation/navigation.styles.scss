@@ -19,6 +19,7 @@
     }
     .nav-utility-icon-wrapper {
         height:48px;
+        position: relative;
 
         .nav-utility-icon {
             fill:white;
@@ -30,7 +31,7 @@
             }
 
             &.cart-active {
-                fill:rgb(43, 165, 165);
+                fill:rgb(199, 255, 255);
             }
         }
         &:last-of-type {

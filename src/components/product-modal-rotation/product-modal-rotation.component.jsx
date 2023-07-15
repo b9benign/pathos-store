@@ -29,14 +29,14 @@ const ProductModalRotation = ({item, imageToggler}) => {
                                     value="profile"
                                />
                             </button>
-                            <button className="product-modal-selection-button" value="top" onClick={() => handleImageActivation('top')}>
+                            <button className="product-modal-selection-button" onClick={() => handleImageActivation('top')}>
                                 <img 
                                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/top.webp`)}
                                     className="product-modal-selectable-image"
                                     alt="product top"
                                 />
                             </button>
-                            <button className="product-modal-selection-button" value="back" onClick={() => handleImageActivation('back')}>
+                            <button className="product-modal-selection-button" onClick={() => handleImageActivation('back')}>
                                 <img 
                                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/back.webp`)}
                                     className="product-modal-selectable-image"

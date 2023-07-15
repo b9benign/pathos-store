@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import ProductModalTable from '../product-modal-table/product-modal-table.component';
 import ProductModalRotation from '../product-modal-rotation/product-modal-rotation.component';
+import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
+import {ReactComponent as LovedIconFilled} from '../../assets/vector-graphics/heart-icon-filled.svg';
+
 import './product-modal.styles.scss';
 
 const ProductModal = ({item, modalUtil}) => {
@@ -23,7 +26,7 @@ const ProductModal = ({item, modalUtil}) => {
                 <div className="product-modal-background" onClick={toggleModal}/>
 
                 <div className="product-modal-content-container">
-
+                    <div className="product-modal-content-blur"/>
                     <div className="product-modal-general-item-info">
                         <div className="product-modal-item-misc">
                             <span className="product-modal-item-name">{name}</span>

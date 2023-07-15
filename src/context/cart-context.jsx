@@ -1,25 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createContext } from "react";
 
 
 
 export const CartContext = createContext({
     isCartOpen: false,
-    setIsCartOpen: () => { },
     cartItems: [],
+    totalCartPrice: 0,
+    totalCartItems: 0,
+    setIsCartOpen: () => { },
     setCartItems: () => { },
     addItemToCart: () => { },
     removeItemFromCart: () => { },
     toggleCartVisibility: () => { },
-    deleteItemFromCart: ( ) => { }
+    deleteItemFromCart: () => { }
 });
 
 
 const CartProvider = ({ children }) => {
 
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const toggleCartVisibility = () => setIsCartOpen(!isCartOpen);
     const [cartItems, setCartItems] = useState([]);
+    const [totalCartItems, setTotalCartItems] = useState(0);
+    const [totalCartPrice, setTotalCartPrice] = useState(0);
+
+
+    const toggleCartVisibility = () => setIsCartOpen(!isCartOpen);
     const indexFinder = (array, objectToFind) => {
         return array.findIndex((element) => {
             if (element.hasOwnProperty('quantity') && objectToFind.hasOwnProperty('quantity')) {
@@ -34,7 +40,6 @@ const CartProvider = ({ children }) => {
             return JSON.stringify(element) === JSON.stringify(objectToFind);
         })
     }
-
     const addItemToCart = (itemToAdd, itemSize) => {
         const itemFinder = cartItems.find((cartItem) => (cartItem.id === itemToAdd.id && cartItem.size === itemSize));
         if (!itemFinder) {
@@ -99,6 +104,31 @@ const CartProvider = ({ children }) => {
             return temp;
         });
     }
+    
+    useEffect(() => {
+        const fetchTotalItems = () => {
+            if (cartItems.length > 0) {
+                const total = cartItems.reduce((acc, currentItem) => {
+                    return acc + currentItem.quantity;
+                }, 0);
+                setTotalCartItems(total);
+            }
+        }
+        return fetchTotalItems();
+    }, [cartItems])
+
+    useEffect(() => {
+        const fetchTotalPrice = () => {
+            if (cartItems.length > 0) {
+                const total = cartItems.reduce((acc, currentItem) => {
+                    const {price, quantity} = currentItem;
+                    return acc + price*quantity;
+                }, 0);
+                setTotalCartPrice(total);
+            }
+        }
+        return fetchTotalPrice();
+    }, [cartItems])
 
     const value = {
         isCartOpen,
@@ -107,7 +137,9 @@ const CartProvider = ({ children }) => {
         setCartItems,
         addItemToCart,
         removeItemFromCart,
-        deleteItemFromCart
+        deleteItemFromCart,
+        totalCartItems,
+        totalCartPrice,
     };
 
     return (

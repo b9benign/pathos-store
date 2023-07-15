@@ -2,6 +2,8 @@ import { useState, useContext } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
 import { ReactComponent as LovedIconFilled } from '../../assets/vector-graphics/heart-icon-filled.svg';
 import { LovedItemContext } from '../../context/loved-context';
+import { UserContext } from '../../context/user-context';
+
 
 import ProductModal from '../product-modal/product-modal.component';
 
@@ -16,6 +18,7 @@ const ProductPreview = ({item}) => {
     const modalUtil = {modalState, setModalState};
     const {toggleIsItemLoved, lovedIdList, fetchLovedIdsList} = useContext(LovedItemContext);
     const [currentlyLoved, setCurrentlyLoved] = useState(lovedIdList.includes(id));
+    const {currentUser} = useContext(UserContext);
 
     const toggleModal = () => {
         setModalState(true);
@@ -23,7 +26,9 @@ const ProductPreview = ({item}) => {
     const toggleLovedHandler = async () => { //bug: when store-page is refreshed, hearted items won't be displayed as such
         toggleIsItemLoved(item);
         await fetchLovedIdsList();
-        setCurrentlyLoved(!currentlyLoved);
+        if(currentUser){
+            setCurrentlyLoved(!currentlyLoved);
+        }
     }
     return (
         

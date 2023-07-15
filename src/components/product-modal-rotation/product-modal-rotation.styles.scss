@@ -1,10 +1,10 @@
 .product-modal-image-rotation {
-    height:15%;
-    // width:100%;
-    margin:0px 3px 5px 0px;
+    height:18%;
     display:flex;
+    margin:0px 0px -10px -15px;
     justify-content: space-around;
     z-index:999;
+    // border-top:1px dashed white;
 
     .product-modal-selection-button {
         height:100%;
@@ -23,5 +23,12 @@
                 cursor:pointer;
             }
         }
+    }
+}
+
+@media (max-width:510px) {
+    .product-modal-image-rotation {
+        border-bottom:1px solid rgba(255, 255, 255, 0.1);
+        
     }
 }
