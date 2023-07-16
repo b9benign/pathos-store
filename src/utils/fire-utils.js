@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { 
-  doc, 
+import {
+  doc,
   getDoc,
-  setDoc, 
+  setDoc,
   getFirestore,
   deleteDoc,
   collection,
@@ -10,13 +10,13 @@ import {
   getDocs
 } from 'firebase/firestore';
 import {
-    getAuth,
-    GoogleAuthProvider,
-    signInWithPopup,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signOut,
-    onAuthStateChanged
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
 } from 'firebase/auth';
 
 
@@ -39,7 +39,7 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
-    prompt: "select_account"
+  prompt: "select_account"
 });
 
 
@@ -69,33 +69,33 @@ export const AuthStateChangeListener = (callback) => {
 
 
 // auth db integration
-export const createUserDocumentFromAuth = async (userAuth, additionalInformation={}) => {
-    const userDocRef = doc(db, 'users', userAuth.uid);
-    const userSnapshot = await getDoc(userDocRef);
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
+  const userDocRef = doc(db, 'users', userAuth.uid);
+  const userSnapshot = await getDoc(userDocRef);
 
-    if(!userSnapshot.exists()){
-      const { displayName, email } = userAuth;
-      const createdAt = new Date();
+  if (!userSnapshot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
 
-      try {
-        await setDoc(userDocRef, {
-          displayName,
-          email,
-          createdAt,
-          ...additionalInformation
-        });
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...additionalInformation
+      });
+    } catch (error) {
+      console.log(error);
     }
-    return userDocRef;
+  }
+  return userDocRef;
 };
 
 export const createGoogleUserDoc = async (googleUser) => {
   const userDocRef = doc(db, 'users', googleUser.uid);
   const userSnapshot = await getDoc(userDocRef);
 
-  if(!userSnapshot.exists()){
+  if (!userSnapshot.exists()) {
     const { displayName, email } = googleUser;
     const createdAt = new Date();
 
@@ -110,12 +110,12 @@ export const createGoogleUserDoc = async (googleUser) => {
 
 // loved
 export const toggleLovedItem = async (itemToToggle, userAuth) => {
-  const {uid} = userAuth;
-  const {id, name, price, category, brand, gender} = itemToToggle;
+  const { uid } = userAuth;
+  const { id, name, price, category, brand, gender } = itemToToggle;
   const itemDocRef = doc(db, 'users', uid, 'loved', id.toString());
   const itemSnapShot = await getDoc(itemDocRef);
 
-  if(itemSnapShot.exists()) {
+  if (itemSnapShot.exists()) {
     await deleteDoc(itemDocRef);
   } else {
     await setDoc(itemDocRef, {
@@ -136,25 +136,9 @@ export const getLovedList = async (userAuth) => {
 
   const lovedItemsMap = querySnapshot.docs.reduce((acc, itemSnapshot) => {
     const content = itemSnapshot.data();
-    const {id} = itemSnapshot;
+    const { id } = itemSnapshot;
     acc[id] = content;
     return acc;
-  },{})
+  }, {})
   return Object.values(lovedItemsMap);
 }
-
-// cart
-// export const incrementCartItem = async (userAuth, itemToAdd) => {
-//   const itemDocRef = doc(db, 'users', userAuth.uid, 'cart');
-//   const itemSnapshot = await getDoc(itemDocRef);
-// }
-
-// export const getCartItems = async (userAuth) => {
-//   const cartColRef = collection(db, 'users', userAuth.uid, 'cart');
-//   const q = query(cartColRef);
-//   const querySnapshot = await getDocs(q);
-
-//   const cartItemsMap = querySnapshot.docs.reduce((acc, itemSnapShot) => {
-
-//   })
-// }

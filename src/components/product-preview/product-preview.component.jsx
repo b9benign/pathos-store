@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ReactComponent as LovedIcon } from '../../assets/vector-graphics/heart-icon.svg';
 import { ReactComponent as LovedIconFilled } from '../../assets/vector-graphics/heart-icon-filled.svg';
 import { LovedItemContext } from '../../context/loved-context';
@@ -16,7 +16,7 @@ const ProductPreview = ({item}) => {
     const {name, id, price, brand, category, gender} = item;
     const [modalState, setModalState] = useState(false);
     const modalUtil = {modalState, setModalState};
-    const {toggleIsItemLoved, lovedIdList, fetchLovedIdsList} = useContext(LovedItemContext);
+    const {toggleIsItemLoved, lovedIdList, fetchLovedIdsList, onLovedList, setOnLovedList} = useContext(LovedItemContext);
     const [currentlyLoved, setCurrentlyLoved] = useState(lovedIdList.includes(id));
     const {currentUser} = useContext(UserContext);
 
@@ -30,13 +30,41 @@ const ProductPreview = ({item}) => {
             setCurrentlyLoved(!currentlyLoved);
         }
     }
+
+    useEffect(() => {
+        const fetchLovedStatus = () => {
+            if(lovedIdList.includes(id)) {
+                setOnLovedList(true);
+
+                return setCurrentlyLoved(true);
+            }
+            setOnLovedList(false);
+            setCurrentlyLoved(false);
+        }
+        return fetchLovedStatus();
+    }, [id, currentUser, lovedIdList, setOnLovedList])
+
+    // const fetchLovedStatus = (id, lovedIdList, setOnLovedList, setCurrentlyLoved) => {
+    //     if (lovedIdList.includes(id)) {
+    //         setOnLovedList(true);
+    //         return setCurrentlyLoved(true);
+    //     }
+    //     setOnLovedList(false);
+    //     setCurrentlyLoved(false);
+    // };
+    // useEffect(() => {
+    //     console.log("boom diigity");
+    //     fetchLovedStatus(id, lovedIdList, setOnLovedList, setCurrentlyLoved);
+    // }, [id, lovedIdList, setOnLovedList]);
+
+
     return (
         
         <>
         
         <div className="product-preview-container">
                  
-            { currentlyLoved ?
+            { currentlyLoved || onLovedList ?
                 <LovedIconFilled className="product-preview-heart-filled-icon" onClick={toggleLovedHandler}/> :
                 <LovedIcon className="product-preview-heart-icon" onClick={toggleLovedHandler}/>
             }

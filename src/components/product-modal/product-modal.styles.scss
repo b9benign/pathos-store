@@ -126,9 +126,25 @@
                 margin-left:-10px;
             }
         }
+        .product-modal-displayed-image {
+            top:12% !important;
+            left:20% !important;
+            pointer-events: none;
 
-        
+            .product-modal-active-image {
+                height:75% !important;
+            }
+        }
+    }
+}
 
-        
+
+@media (max-width:450px) {
+    .product-modal-displayed-image {
+        top:20% !important;
+        left:20% !important;
+        pointer-events: none;
+        width:100% !important;
+        transform: scale(1.1);
     }
 }

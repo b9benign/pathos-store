@@ -1,7 +1,7 @@
 import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
 import {ReactComponent as LovedIconFilled} from '../../assets/vector-graphics/heart-icon-filled.svg';
 import { ReactComponent as CartIcon } from '../../assets/vector-graphics/shopping-cart-icon.svg';
-import { useContext, useState } from 'react';
+import { useContext, useState} from 'react';
 import { CartContext } from '../../context/cart-context';
 import { LovedItemContext } from '../../context/loved-context';
 import { UserContext } from '../../context/user-context';
@@ -26,7 +26,7 @@ const ProductModalTable = ({ item }) => {
         setShoeSize(value);
     }
 
-    const toggleLovedHandler = async () => { //bug: when store-page is refreshed, hearted items won't be displayed as such
+    const toggleLovedHandler = async () => {
         toggleIsItemLoved(item);
         await fetchLovedIdsList();
         if(currentUser){

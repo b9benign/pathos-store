@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import ProductModalTable from '../product-modal-table/product-modal-table.component';
 import ProductModalRotation from '../product-modal-rotation/product-modal-rotation.component';
-import {ReactComponent as LovedIcon} from '../../assets/vector-graphics/heart-icon.svg';
-import {ReactComponent as LovedIconFilled} from '../../assets/vector-graphics/heart-icon-filled.svg';
 
 import './product-modal.styles.scss';
 
