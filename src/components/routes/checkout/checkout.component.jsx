@@ -44,9 +44,7 @@ const CheckoutPage = () => {
                         : ''
                     }
                 </div>
-
-            </div>
-            <div className={`checkout-page-total-container ${chevronToggled ? '' : 'co-inactive-chevron'}`}>
+                <div className={`checkout-page-total-container ${chevronToggled ? '' : 'co-inactive-chevron'}`}>
                 <div className="checkout-page-total-price">{`Cart Total: $${totalCartPrice}`}
                     {chevronToggled
                         ? <span className="checkout-page-chevron" onClick={chevronToggler}>&#10094;</span>
@@ -54,6 +52,8 @@ const CheckoutPage = () => {
                     }
                 </div>
             </div>
+            </div>
+            
         </>
     )
 }

@@ -27,6 +27,8 @@ const SignInForm = () => {
             console.log(error);
         }
     }
+
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signInUserAuthWithEmailAndPassword(email, password);

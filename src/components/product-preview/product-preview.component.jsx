@@ -44,20 +44,6 @@ const ProductPreview = ({item}) => {
         return fetchLovedStatus();
     }, [id, currentUser, lovedIdList, setOnLovedList])
 
-    // const fetchLovedStatus = (id, lovedIdList, setOnLovedList, setCurrentlyLoved) => {
-    //     if (lovedIdList.includes(id)) {
-    //         setOnLovedList(true);
-    //         return setCurrentlyLoved(true);
-    //     }
-    //     setOnLovedList(false);
-    //     setCurrentlyLoved(false);
-    // };
-    // useEffect(() => {
-    //     console.log("boom diigity");
-    //     fetchLovedStatus(id, lovedIdList, setOnLovedList, setCurrentlyLoved);
-    // }, [id, lovedIdList, setOnLovedList]);
-
-
     return (
         
         <>
@@ -73,6 +59,7 @@ const ProductPreview = ({item}) => {
                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)} 
                     className="product-preview-thumbnail"
                     alt={name}
+                    loading='lazy'
                     />
                 
 

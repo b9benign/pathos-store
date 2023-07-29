@@ -19,7 +19,9 @@ const CheckoutItem = ({ item }) => {
                 <img
                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/profile.webp`)}
                     alt="cart item"
-                    className="checkout-item-product-image" />
+                    className="checkout-item-product-image" 
+                    loading='lazy'
+                />
             </div>
 
             <div className="checkout-item-info">

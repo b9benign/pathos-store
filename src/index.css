@@ -1,7 +1,7 @@
 * {
   margin:0;
   box-sizing: border-box;
-  font-family:'Kanit','Roboto','Lato',   sans-serif;
+  font-family:'Kanit','Roboto','Lato', monospace;
 }
 
 :root {

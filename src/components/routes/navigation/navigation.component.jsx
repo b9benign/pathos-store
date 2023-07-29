@@ -22,6 +22,7 @@ const Navigation = () => {
     const { currentUser } = useContext(UserContext);
     const logOutHandler = () => {
         logUserOut(auth);
+        window.location.reload();
     }
     const { toggleCartVisibility, isCartOpen, cartItems } = useContext(CartContext);
     const { fetchLovedList } = useContext(LovedItemContext);

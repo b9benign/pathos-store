@@ -19,7 +19,9 @@ const CartItem = () => {
                                 <img
                                     src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)}
                                     alt="cart item"
-                                    className="cart-item-product-image" />
+                                    className="cart-item-product-image"
+                                    loading='lazy'
+                                />
                             </div>
                             <div className="cart-item-info-container">
                                 <div className="cart-item-info-name">{name}</div>

@@ -5,27 +5,31 @@ import { useContext } from 'react';
 import { ListContext } from '../../../context/list-context';
 
 import './store.styles.scss';
+import CategoryFilter from '../../category-filter/category-filter.component';
 
 
 
 
 const StorePage = () => {
 
-    const {filteredProducts} = useContext(ListContext);
+    const { filteredProducts } = useContext(ListContext);
 
     return (
-        <div className="store-page-container">
-            <div className="store-page-content-spacer">
+        <>
+            <CategoryFilter />
+            <div className="store-page-container">
+                <div className="store-page-content-spacer">
+                    <ProductFilter />
+                    <div className="store-products-container">
+                        {filteredProducts.map((item) => {
+                            return <ProductPreview item={item} key={item.id} />
+                        })}
+                    </div>
 
-                <ProductFilter />
-                <div className="store-products-container">
-                    {filteredProducts.map((item) => {
-                        return <ProductPreview item={item} key={item.id}/>
-                    })} 
-                </div> 
-
+                </div>
             </div>
-        </div>
+        </>
+
     );
 }
 
