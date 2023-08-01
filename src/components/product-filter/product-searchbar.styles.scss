@@ -1,62 +1,71 @@
 .product-searchbar-container {
-    height: 70px;
-    width:100%;
-    max-width:1200px;
-    margin: 100px auto 15px auto;
-    overflow:hidden;
+    max-width: 1200px;
     position: relative;
+    width: 100%;
+    max-width: 650px;
+    display:flex;
+    flex-direction: column;
 
     .product-searchbar-content-wrapper {
-        height:45px;
-        width:100%;
-        max-width:700px;
-        display:flex;
-        justify-content: space-between;
-        // border:1px solid red;
+        height: 45px;
+        width: 100%;
+        display: flex;
+        position: relative;
 
         .product-searchbar-input {
-            width:calc(100% - 40px);
-            border:1px solid var(--dark-shade);
-            padding-left:7px;
-            font-size:16px;
+            width: 100%;
+            border: 1px solid var(--dark-shade);
+            padding-left: 7px;
+            font-size: 16px;
             font-weight: 300;
 
             &:focus {
-                outline:none;
+                outline: none;
+            }
+        }
+        .product-searchbar-icon {
+            position: absolute;
+            top: 2px;
+            right:55px;
+            width: 25px;
+            margin-top: -3px;
+            fill: var(--dark-shade);
+            transition: 300ms;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.9);
             }
         }
 
-        .product-searchbar-button {
-            aspect-ratio: 1/1;
-            height:40px;
-            border:none;
-            position: relative;
-            background-color:white;
-
-            .product-searchbar-icon {
-                width:45px;
-                padding-right:10px;
-                margin-top:-3px;
-                fill:var(--dark-shade);
-                transition: 300ms;
-                
-                &:hover {
-                    cursor: pointer;
-                    transform:scale(1.05);
-                }
-                &:active {
-                    transform: scale(0.9);
-                }
-            }
-        }
         .product-searchbar-reset-button {
             position: absolute;
-            bottom:0;
-            background:none;
-            border:none;
-            color:rgb(255, 94, 0);
+            top:-25px;
+            background: none;
+            border: none;
+            color: rgb(255, 94, 0);
             text-decoration: underline;
-            cursor:pointer;
+            cursor: pointer;
+        }
+
+        .acf-toggle-button {
+            margin-left:-2px;
+            background:var(--dark-shade);
+            border:1px solid black;
+            color:white;
+            width:50px;
+            position: relative;
+            font-size:20px;
+
+            &:hover {
+                cursor: pointer;
+                background:white;
+                color:black;
+            }
         }
     }
 }

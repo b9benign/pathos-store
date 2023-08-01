@@ -57,7 +57,14 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) {
     return;
   } else {
-    return await signInWithEmailAndPassword(auth, email, password);
+    try {
+      return await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      if(error.code === "auth/wrong-password") {
+        alert("Wrong password. For easier sign-in use your existing Google Account.");
+      }
+      console.log(error);
+    }
   }
 }
 export const logUserOut = async () => {

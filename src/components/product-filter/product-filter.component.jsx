@@ -1,59 +1,68 @@
 import { ReactComponent as SearchIcon } from '../../assets/vector-graphics/magnifying_glass.svg';
-
+import { ReactComponent as SettingsIcon } from '../../assets/vector-graphics/setttings.svg';
 import { useContext, useState } from 'react';
 import { ListContext } from '../../context/list-context';
 
 import './product-searchbar.styles.scss'
+import CategoryFilter from '../category-filter/category-filter.component';
 
 
 
 const ProductSearchbar = () => {
 
     const [tempString, setTempString] = useState('');
+    const [isFilterToggled, setIsFilterToggled] = useState(false);
 
     const {
-        searchString, 
-        setSearchString, 
+        searchString,
+        setSearchString,
         updateFilteredProducts,
         filteredState,
         resetFilteredProducts
     } = useContext(ListContext);
-
     const handleChange = (e) => {
         setTempString(e.target.value);
         setSearchString(e.target.value.toLowerCase());
-        
-    }
 
+    }
     const handleClick = () => {
-        if(searchString) {
+        if (searchString) {
             updateFilteredProducts(searchString);
             console.log(tempString);
             console.log(searchString);
         }
     }
-
     const handleReset = () => {
         resetFilteredProducts();
         setTempString('');
+    }
+
+
+    const handleFilterToggle = () => {
+        setIsFilterToggled(!isFilterToggled);
     }
 
     return (
         <div className="product-searchbar-container">
             <div className="product-searchbar-content-wrapper">
                 {filteredState && <button className="product-searchbar-reset-button" onClick={handleReset}>Reset filters</button>}
-                <input 
+                <input
                     className="product-searchbar-input"
                     placeholder="Search something..."
                     value={tempString}
                     onChange={handleChange}
                 />
-
-                <button className="product-searchbar-button" onClick={handleClick}>
-                    <SearchIcon className="product-searchbar-icon"/>
+                <SearchIcon className="product-searchbar-icon" onClick={handleClick} />
+                <button className="acf-toggle-button" onClick={handleFilterToggle}>
+                    {isFilterToggled 
+                        ?   <span>&#9661;</span>
+                        :   <span>&#9651;</span>
+                    }
                 </button>
-
             </div>
+            {isFilterToggled &&
+                <CategoryFilter />
+            }
         </div>
     );
 }

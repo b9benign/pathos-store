@@ -1,10 +1,47 @@
-.category-filter-container {
-    height:600px;
-    width:350px;
-    background-color: red;
-    position: absolute;
-    top:75px;
-    left:0;
-    z-index:78394827834729873498;
-}
+.acf-comp-container {
+    height:auto;
+    min-height:50px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-right:1px solid var(--mid-shade);
+    border-bottom:1px solid var(--mid-shade);
 
+    .acf-content-wrapper {
+        height:100%;
+        width:80%;
+        max-width:70%;
+
+        .acf-section {
+            text-align: right;
+            padding:0 5px 10px 0;
+
+
+            &:first-of-type {
+                border-bottom:1px dashed var(--mid-shade);
+            }
+
+            .acf-section-title {
+                font-size: 18px;
+                text-transform: uppercase;
+                padding:5px;
+            }
+
+            .acf-selection-button {
+                font-size:16px;
+                background:var(--dark-shade);
+                color:white;
+                border:1px solid var(--dark-shade);
+                font-weight:300;
+                margin:0 10px 5px 0;
+
+                &:hover {
+                    background:white;
+                    cursor: pointer;
+                    color:black;
+                }
+            }
+        }
+    }
+}

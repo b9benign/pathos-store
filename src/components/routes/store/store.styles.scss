@@ -8,16 +8,24 @@
     min-height:95vh;
 
     .store-page-content-spacer {
-        justify-content: space-between;
         margin:0 auto;
+
+        .sp-filters-spacer {
+            display:flex;
+            width:100%;
+            width:100%;
+            max-width:1200px;
+            margin: 0 auto;
+            margin:155px auto 15px auto;
+        }
     
         .store-products-container {
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             column-gap: 10px;
             row-gap: 25px;
-            margin:0 auto;
             max-width:1200px;
+            margin:0 auto;
         }
     }
     @media (max-width:900px) {
