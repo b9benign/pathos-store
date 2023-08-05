@@ -1,7 +1,7 @@
 import ProductPreview from '../../product-preview/product-preview.component';
 import ProductFilter from '../../product-filter/product-filter.component';
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ListContext } from '../../../context/list-context';
 
 import './store.styles.scss';
@@ -12,7 +12,6 @@ import './store.styles.scss';
 const StorePage = () => {
 
     const { filteredProducts } = useContext(ListContext);
-    const [ filterToggled, setFilterToggled] = useState(false);
 
 
     return (

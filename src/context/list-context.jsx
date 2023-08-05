@@ -5,22 +5,26 @@ import STORE_DATA from "../utils/store-data";
 
 export const ListContext = createContext({
     filteredProducts: [],
+    compValues: [],
     searchString: '',
     filteredState: false,
-    updateFilteredProducts: () => {},
-    setSearchString: () => {},
-    resetFilteredProducts: () => {},
+    updateFilteredProducts: () => { },
+    setSearchString: () => { },
+    resetFilteredProducts: () => { },
+    toggleCompItem: () => { }
 });
 
 
 
 
-const ListProvider = ({children}) => {
+const ListProvider = ({ children }) => {
 
     const vanillaData = STORE_DATA;
     const [filteredProducts, setFilteredProducts] = useState(vanillaData);
     const [searchString, setSearchString] = useState('');
     const [filteredState, setFilteredState] = useState(false);
+    const [compValues, setCompValues] = useState([]);
+
 
     const updateFilteredProducts = (searchString) => {
         const tempFilterList = vanillaData.filter((item) => {
@@ -29,30 +33,103 @@ const ListProvider = ({children}) => {
         })
         setFilteredProducts(tempFilterList);
     }
-
     const resetFilteredProducts = () => {
         setFilteredProducts(vanillaData);
         setSearchString('');
     }
-
     useEffect(() => {
         const unsubscribe = () => {
-            if(filteredProducts !== vanillaData) {
+            if (filteredProducts !== vanillaData) {
                 setFilteredState(true);
-            } else setFilteredState(false);
+            } else {
+                setFilteredState(false);
+            };
         }
         return unsubscribe();
     }, [filteredProducts, vanillaData, filteredState]);
+    const toggleCompItem = (valueToToggle) => {
+        const index = compValues.indexOf(valueToToggle);
+        if (index < 0) {
+            if (valueToToggle === "men" && compValues.includes("women")) {
+                const i = compValues.indexOf("women");
+                setCompValues(compValues.splice(i, 1));
+            } else if (valueToToggle === "women" && compValues.includes("men")) {
+                const i = compValues.indexOf("men");
+                setCompValues(compValues.splice(i, 1));
+            }
+            setCompValues(compValues.concat(valueToToggle));
+        } else {
+            setCompValues(compValues => {
+                const temp = [...compValues];
+                temp.splice(index, 1);
+                return temp;
+            })
+        }
+    }
 
 
+    useEffect(() => {  //this is atrocious, proceed on your own risk
+        const unsubscribe = () => {
+            const updateCompList = () => {
+                const utilArray = [...compValues];
+                let categorySelection = [];
+                let brandSelection = [];
+
+                let helperOne = [...vanillaData];
+                let helperTwo = [];
+                let helperThree = [];
+
+                if (compValues.includes("men") || compValues.includes("women")) {
+                    if (compValues.includes("men")) {
+                        helperOne = vanillaData.filter(item => item.gender === "men");
+                        utilArray.splice(utilArray.indexOf("men"), 1);
+                    } else if (compValues.includes("women")) {
+                        helperOne = vanillaData.filter(item => item.gender === "women");
+                        utilArray.splice(utilArray.indexOf("women"), 1);
+                    }
+                }
+                utilArray.forEach(value => {
+                    if (["Running", "Lifestyle", "Outdoor", "Skate", "Court"].includes(value)) {
+                        categorySelection.push(value);
+                    } else {
+                        brandSelection.push(value);
+                    }
+                });
+                if (categorySelection.length > 0) {
+                    for (let i = 0; i < categorySelection.length; i++) {
+                        const temp = helperOne.filter(item => item.category === categorySelection[i]);
+                        helperTwo = helperTwo.concat(...temp);
+                    }
+                } else {
+                    helperTwo = helperOne;
+                }
+                if (brandSelection.length > 0) {
+                    console.log(brandSelection.length);
+                    console.log(brandSelection);
+                    for (let i = 0; i < brandSelection.length; i++) {
+                        const temp = helperTwo.filter(item => item.brand === brandSelection[i]);
+                        helperThree = helperThree.concat(...temp);
+                    }
+                } else {
+                    console.log("accessed");
+                    helperThree = helperTwo;
+                }
+                setFilteredProducts(helperThree);
+            };
+            return updateCompList();
+        }
+        return unsubscribe();
+    }, [compValues, vanillaData]);
 
     const value = {
-        filteredProducts, 
+        filteredProducts,
         searchString,
         setSearchString,
         updateFilteredProducts,
         resetFilteredProducts,
         filteredState,
+        toggleCompItem,
+        compValues
     };
 
     return (

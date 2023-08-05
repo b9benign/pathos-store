@@ -1,5 +1,4 @@
 import { ReactComponent as SearchIcon } from '../../assets/vector-graphics/magnifying_glass.svg';
-import { ReactComponent as SettingsIcon } from '../../assets/vector-graphics/setttings.svg';
 import { useContext, useState } from 'react';
 import { ListContext } from '../../context/list-context';
 
@@ -23,21 +22,16 @@ const ProductSearchbar = () => {
     const handleChange = (e) => {
         setTempString(e.target.value);
         setSearchString(e.target.value.toLowerCase());
-
     }
     const handleClick = () => {
         if (searchString) {
             updateFilteredProducts(searchString);
-            console.log(tempString);
-            console.log(searchString);
         }
     }
     const handleReset = () => {
         resetFilteredProducts();
         setTempString('');
     }
-
-
     const handleFilterToggle = () => {
         setIsFilterToggled(!isFilterToggled);
     }
