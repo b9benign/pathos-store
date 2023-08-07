@@ -42,7 +42,7 @@ const ProductSearchbar = () => {
                 {filteredState && <button className="product-searchbar-reset-button" onClick={handleReset}>Reset filters</button>}
                 <input
                     className="product-searchbar-input"
-                    placeholder="Search something..."
+                    placeholder="Search all items..."
                     value={tempString}
                     onChange={handleChange}
                 />

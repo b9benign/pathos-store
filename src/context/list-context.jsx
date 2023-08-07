@@ -25,7 +25,6 @@ const ListProvider = ({ children }) => {
     const [filteredState, setFilteredState] = useState(false);
     const [compValues, setCompValues] = useState([]);
 
-
     const updateFilteredProducts = (searchString) => {
         const tempFilterList = vanillaData.filter((item) => {
             const itemTitle = item.name + item.brand;
@@ -34,19 +33,11 @@ const ListProvider = ({ children }) => {
         setFilteredProducts(tempFilterList);
     }
     const resetFilteredProducts = () => {
-        setFilteredProducts(vanillaData);
+        setFilteredProducts(vanillaData)
+        setFilteredState(false);
+        setCompValues([]);
         setSearchString('');
     }
-    useEffect(() => {
-        const unsubscribe = () => {
-            if (filteredProducts !== vanillaData) {
-                setFilteredState(true);
-            } else {
-                setFilteredState(false);
-            };
-        }
-        return unsubscribe();
-    }, [filteredProducts, vanillaData, filteredState]);
     const toggleCompItem = (valueToToggle) => {
         const index = compValues.indexOf(valueToToggle);
         if (index < 0) {
@@ -67,15 +58,27 @@ const ListProvider = ({ children }) => {
         }
     }
 
+    useEffect(() => {
+        console.log("boom")
+        const unsubscribe = () => {
+            if (filteredProducts !== vanillaData) {
+                setFilteredState(true);
+            } else {
+                setFilteredState(false);
+            };
+        }
+        unsubscribe();
+        return unsubscribe;
+    }, [filteredProducts, vanillaData]);
 
-    useEffect(() => {  //this is atrocious, proceed on your own risk
+    useEffect(() => {  //this is atrocious, proceed at own risk
         const unsubscribe = () => {
             const updateCompList = () => {
                 const utilArray = [...compValues];
                 let categorySelection = [];
                 let brandSelection = [];
 
-                let helperOne = [...vanillaData];
+                let helperOne = vanillaData;
                 let helperTwo = [];
                 let helperThree = [];
 
@@ -104,14 +107,11 @@ const ListProvider = ({ children }) => {
                     helperTwo = helperOne;
                 }
                 if (brandSelection.length > 0) {
-                    console.log(brandSelection.length);
-                    console.log(brandSelection);
                     for (let i = 0; i < brandSelection.length; i++) {
                         const temp = helperTwo.filter(item => item.brand === brandSelection[i]);
                         helperThree = helperThree.concat(...temp);
                     }
                 } else {
-                    console.log("accessed");
                     helperThree = helperTwo;
                 }
                 setFilteredProducts(helperThree);
