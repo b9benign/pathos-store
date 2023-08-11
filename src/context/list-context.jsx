@@ -59,7 +59,6 @@ const ListProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        console.log("boom")
         const unsubscribe = () => {
             if (filteredProducts !== vanillaData) {
                 setFilteredState(true);
