@@ -9,7 +9,7 @@ import './store.styles.scss';
 
 
 
-const StorePage = () => {
+const StorePage = () => { 
 
     const { filteredProducts } = useContext(ListContext);
     const [currentPage, setCurrentPage] = useState(1)
