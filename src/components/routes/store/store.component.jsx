@@ -13,7 +13,7 @@ const StorePage = () => {
 
     const { filteredProducts } = useContext(ListContext);
     const [currentPage, setCurrentPage] = useState(1)
-    const [pageProducts, setPageProducts] = useState(15);
+    const pageProducts = 15;
 
     const lastPost = currentPage * pageProducts;
     const firstPost = lastPost - pageProducts;
@@ -28,7 +28,6 @@ const StorePage = () => {
 
     useEffect(() => {
         setActivePage(currentPage.toString())
-        console.log(currentPage);
     }, [currentPage])
 
     useEffect(() => {

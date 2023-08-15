@@ -36,7 +36,7 @@ const Navigation = () => {
             <div className="navigation-items-wrapper">
                 <div>
                     <Link to="/store" className="nav-category-link">Store</Link>
-                    <Link to="/about" className="nav-category-link">About</Link>
+                    <Link to="https://github.com/b9benign/pathos-store" target="_blank" className="nav-category-link">About</Link>
                 </div>
 
                 <div className="link-container-categories">

@@ -15,7 +15,6 @@ const UserProvider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = AuthStateChangeListener((user) => {
-            //fires thrice upon change, needs improvement/ fixing
             if (user) {
                 createUserDocumentFromAuth(user);
             }

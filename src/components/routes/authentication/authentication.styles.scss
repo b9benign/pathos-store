@@ -16,6 +16,19 @@
         padding: 5px;
         color: white;
         font-weight: 200;
+
+        .auth-demo-login {
+            text-decoration: underline;
+
+            &:hover {
+                cursor: pointer;
+                color:orange;
+            }
+
+            &:active {
+                color:rgb(255, 204, 110);
+            }
+        }
     }
 }
 
