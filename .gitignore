@@ -10,6 +10,7 @@
 /src/assets/product-images
 # production
 /build
+.assets
 # misc
 .DS_Store
 .env.local
