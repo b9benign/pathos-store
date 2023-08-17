@@ -71,6 +71,7 @@
         text-align: center;
         font-weight:300;
         animation: notiAnim 2000ms linear 1;
+        animation-delay: 500ms;
         transform: translateX(100%);
     }
     .auth-notification-red {
@@ -83,6 +84,7 @@
         font-weight:300;
         animation: notiAnim 2000ms linear 1;
         transform: translateX(100%);
+        animation-delay: 500ms;
     }
 }
 .nav-category-link {

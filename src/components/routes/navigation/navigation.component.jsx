@@ -32,13 +32,12 @@ const Navigation = () => {
     }
 
     const [authStatus, setAuthStatus] = useState();
-
     useEffect(() => {
         const unsubscribe = () => {
             if (currentUser) {
-                setTimeout(setAuthStatus('loggedIn'), 1000);
+                setAuthStatus('loggedIn');
             } else {
-                setTimeout(setAuthStatus('loggedOut'), 1000);
+                setAuthStatus('loggedOut');
             }
         }
         return unsubscribe();
