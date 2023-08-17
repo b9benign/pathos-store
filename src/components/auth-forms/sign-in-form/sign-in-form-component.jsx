@@ -7,34 +7,33 @@ import { ReactComponent as GoogleFilled } from '../../../assets/vector-graphics/
 import '../auth-forms.styles.scss';
 
 const SignInForm = () => {
-    
-    const defaultFormFields = { email:'', password:''};
+
+    const defaultFormFields = { email: '', password: '' };
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
     const emptyFormFields = () => setFormFields(defaultFormFields);
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormFields({...formFields, [name] : value})
+        const { name, value } = e.target;
+        setFormFields({ ...formFields, [name]: value })
     }
 
     const handleGoogleSignIn = async () => {
         try {
             const { user } = await signInWithGooglePopup();
             await createGoogleUserDoc(user);
-
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }
     }
 
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signInUserAuthWithEmailAndPassword(email, password);
         emptyFormFields();
+        window.location.reload();
     }
-
 
     return (
         <div className="authpage-form-container">
@@ -42,29 +41,29 @@ const SignInForm = () => {
             <span className="authpage-form-subtitle">Sign in with your email or Google.</span>
             <form onSubmit={handleSubmit}>
 
-                <FormInput 
+                <FormInput
                     className="authpage-input"
                     label="Email"
                     name="email"
                     type="email"
                     onChange={handleChange}
                     value={email}
-                    required 
+                    required
                 />
 
-                <FormInput 
+                <FormInput
                     className="authpage-input"
                     label="Password"
                     name="password"
                     type="password"
                     onChange={handleChange}
                     value={password}
-                    required 
+                    required
                 />
                 <div className="authpage-login-button-spacer">
                     <CustomButton type="submit" buttonType='light'>Log in</CustomButton>
                     <CustomButton onClick={handleGoogleSignIn} buttonType='google'>
-                        <GoogleFilled className="google-icon-filled"/>
+                        <GoogleFilled className="google-icon-filled" />
                     </CustomButton>
                 </div>
             </form>

@@ -34,7 +34,7 @@ const SignUpForm = () => {
             const { user } = await createUserAuthWithEmailAndPassword(email, password);
             await createUserDocumentFromAuth(user, {displayName});
             emptyFormFields();
-            
+            window.location.reload(); 
         } catch (error) {
             console.log(error);
         }

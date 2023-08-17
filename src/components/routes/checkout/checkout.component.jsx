@@ -1,26 +1,38 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../../context/cart-context';
 import CheckoutItem from '../../checkout-item/checkout-item.component';
 
 import './checkout.styles.scss';
+import Payments from '../../payments/payments.component';
 
 
 
 const CheckoutPage = () => {
 
     const { cartItems, totalCartPrice } = useContext(CartContext);
-    const existingItems = () => cartItems.length > 0;
+    const [existingItems, setExistingItems] = useState(cartItems.length > 0)
     const [chevronToggled, setIsChevronToggled] = useState(false);
 
     const chevronToggler = () => {
         setIsChevronToggled(!chevronToggled);
     }
 
+    useEffect(() => {
+        const unsubscribe = () => {
+            if(cartItems.length > 0){
+                setExistingItems(true);
+            } else {
+                setExistingItems(false);
+            }
+        }
+        return unsubscribe();
+    },[cartItems])
+
     return (
         <>
             <div className="checkout-page-container">
                 {
-                    cartItems.length > 0
+                    existingItems
                         ?
                         (
                             <div className="checkout-page-welcome-banner">
@@ -31,7 +43,7 @@ const CheckoutPage = () => {
                 }
                 <div className="checkout-page-spacer">
 
-                    {existingItems ?
+                    {existingItems  &&
                         <div className="checkout-page-items-container">
                             {
                                 cartItems.map((item) => {
@@ -40,8 +52,8 @@ const CheckoutPage = () => {
                                     )
                                 })
                             }
+                            <Payments />
                         </div>
-                        : ''
                     }
                 </div>
                 <div className={`checkout-page-total-container ${chevronToggled ? '' : 'co-inactive-chevron'}`}>

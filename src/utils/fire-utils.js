@@ -69,6 +69,7 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
 }
 export const logUserOut = async () => {
   await signOut(auth);
+  window.location.reload();
 }
 export const AuthStateChangeListener = (callback) => {
   onAuthStateChanged(auth, callback);

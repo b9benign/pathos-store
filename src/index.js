@@ -9,6 +9,9 @@ import CartProvider from './context/cart-context';
 import ListProvider from './context/list-context';
 import LovedProvider from './context/loved-context';
 
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe-utils';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -17,7 +20,9 @@ root.render(
         <LovedProvider>
           <CartProvider>
             <ListProvider>
-              <App />
+              <Elements stripe={stripePromise}>
+                <App />
+              </Elements>
             </ListProvider>
           </CartProvider>
         </LovedProvider>

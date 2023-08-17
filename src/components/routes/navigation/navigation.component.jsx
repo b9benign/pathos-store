@@ -1,5 +1,5 @@
-import { Link, Outlet } from 'react-router-dom';
-import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../../../context/user-context';
 import { CartContext } from '../../../context/cart-context';
 import { LovedItemContext } from '../../../context/loved-context';
@@ -19,10 +19,10 @@ import './navigation.styles.scss';
 
 const Navigation = () => {
 
+
     const { currentUser } = useContext(UserContext);
     const logOutHandler = () => {
         logUserOut(auth);
-        window.location.reload();
     }
     const { toggleCartVisibility, isCartOpen, cartItems } = useContext(CartContext);
     const { fetchLovedList } = useContext(LovedItemContext);
@@ -30,6 +30,19 @@ const Navigation = () => {
     const handleLovedIconClick = () => {
         fetchLovedList();
     }
+
+    const [authStatus, setAuthStatus] = useState();
+
+    useEffect(() => {
+        const unsubscribe = () => {
+            if (currentUser) {
+                setTimeout(setAuthStatus('loggedIn'), 1000);
+            } else {
+                setTimeout(setAuthStatus('loggedOut'), 1000);
+            }
+        }
+        return unsubscribe();
+    }, [currentUser])
 
     return (
         <div className="navigation-container">
@@ -67,7 +80,16 @@ const Navigation = () => {
                     }
                 </div>
             </div>
-            <Outlet />
+            {authStatus !== "neutral" &&
+                <div className={`${authStatus === "loggedIn" ? 'auth-notification-green' : 'auth-notification-red'}`}>
+                    <span>
+                        {   authStatus === "loggedIn" 
+                            ? 'Signed in'
+                            : 'Signed out'
+                        }
+                    </span>
+                </div>
+            }
         </div>
     )
 }
