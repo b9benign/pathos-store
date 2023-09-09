@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 import './payments.styles.scss';
-import { AddressElement, Elements, ExpressCheckoutElement, PaymentElement, useElements } from '@stripe/react-stripe-js';
+import { AddressElement, Elements, PaymentElement, } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
 const Payments = () => {
-    const elements = useElements();
     const [stripePromise, setStripePromise] = useState(() => loadStripe('pk_test_51NJH9wB6Wg8FhT26RHodA1lB6L7x6OfK3oUEJ2ozoMX1GnUKspv76lBmyLDO5khPqYM10vVATqhusnroauD1oa2100tVgvtr6q'));
     const optionsPayment = {
         mode: 'payment',
@@ -15,7 +14,7 @@ const Payments = () => {
     const optionsShipping = {
         mode: 'shipping',
     };
-    if (!stripePromise || !elements) {
+    if (!stripePromise) {
         return;
     }
     return (
@@ -29,7 +28,9 @@ const Payments = () => {
                 </div>
                 <div>
                     <h2>Shipping</h2>
-                    <AddressElement options={optionsShipping} />
+                    <Elements stripe={stripePromise}> 
+                        <AddressElement options={optionsShipping} />
+                    </Elements>
                 </div>
             </form>
             <button className="checkout-pay-button">Buy Now</button>
