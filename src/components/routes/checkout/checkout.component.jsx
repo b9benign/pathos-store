@@ -39,7 +39,7 @@ const CheckoutPage = () => {
                                 <span className="checkout-page-welcome-text">Proceed to payment or adjust your cart</span>
                             </div>
                         )
-                        : <div className="checkout-page-no-items">Your cart it empty.</div>
+                        : <div className="checkout-page-no-items">Your cart is empty.</div>
                 }
                 <div className="checkout-page-spacer">
 

@@ -1,35 +1,38 @@
+import { useState } from 'react';
+
 import './payments.styles.scss';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { AddressElement, Elements, ExpressCheckoutElement, PaymentElement, useElements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 const Payments = () => {
-
-    const stripe = useStripe();
     const elements = useElements();
-
-    const handlePayment = async (e) => {
-        e.preventDefault();
-
-        if(!stripe && !elements) {
-            return;
-        }
-        const response = await fetch('/.netlify/functions/create-payment-intent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({amount: 10000})
-        }).then(res => res.json())
-
-        console.log(response);
+    const [stripePromise, setStripePromise] = useState(() => loadStripe('pk_test_51NJH9wB6Wg8FhT26RHodA1lB6L7x6OfK3oUEJ2ozoMX1GnUKspv76lBmyLDO5khPqYM10vVATqhusnroauD1oa2100tVgvtr6q'));
+    const optionsPayment = {
+        mode: 'payment',
+        currency: 'usd',
+        amount: 1099,
+    };
+    const optionsShipping = {
+        mode: 'shipping',
+    };
+    if (!stripePromise || !elements) {
+        return;
     }
-
     return (
-        <div className="payments-comp-container">
-            <h2>Payment options</h2>
-            <form className="payments-form-container" onSubmit={handlePayment}>
-                <CardElement className="stripe-card-element"/>
-                <button type="submit">Pej</button>
+        <div className="checkout-payments-container">
+            <form>
+                <div className="checkout-payments-section">
+                    <h2>Billing</h2>
+                    <Elements stripe={stripePromise} options={optionsPayment}>
+                        <PaymentElement className="stripe-payment-element" />
+                    </Elements>
+                </div>
+                <div>
+                    <h2>Shipping</h2>
+                    <AddressElement options={optionsShipping} />
+                </div>
             </form>
+            <button className="checkout-pay-button">Buy Now</button>
         </div>
     )
 }
