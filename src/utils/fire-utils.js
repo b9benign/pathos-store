@@ -23,12 +23,12 @@ import {
 
 // config
 const firebaseConfig = {
-  apiKey: "AIzaSyCXP2Cwy87v9SZ_ePUtAK0I7SJD_0EYoCk",
+  apiKey: process.env.REACT_APP_FB_APIKEY,
   authDomain: "hera-store-e5a98.firebaseapp.com",
   projectId: "hera-store-e5a98",
   storageBucket: "hera-store-e5a98.appspot.com",
-  messagingSenderId: "354602318048",
-  appId: "1:354602318048:web:11cc479d2a6d7ff582b885"
+  messagingSenderId: process.env.REACT_APP_FB_SENDER,
+  appId: process.env.REACT_APP_FB_APP
 };
 
 
