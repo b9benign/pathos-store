@@ -5,6 +5,8 @@ import CheckoutItem from '../../checkout-item/checkout-item.component';
 import './checkout.styles.scss';
 import Payments from '../../payments/payments.component';
 
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 
 const CheckoutPage = () => {
@@ -12,6 +14,13 @@ const CheckoutPage = () => {
     const { cartItems, totalCartPrice } = useContext(CartContext);
     const [existingItems, setExistingItems] = useState(cartItems.length > 0)
     const [chevronToggled, setIsChevronToggled] = useState(false);
+
+    const [stripePromise, setStripePromise] = useState(() => loadStripe('pk_test_51NJH9wB6Wg8FhT26RHodA1lB6L7x6OfK3oUEJ2ozoMX1GnUKspv76lBmyLDO5khPqYM10vVATqhusnroauD1oa2100tVgvtr6q'));
+    const optionsPayment = {
+        mode: 'payment',
+        currency: 'usd',
+        amount: 1099,
+    };
 
     const chevronToggler = () => {
         setIsChevronToggled(!chevronToggled);
@@ -52,7 +61,9 @@ const CheckoutPage = () => {
                                     )
                                 })
                             }
-                            <Payments />
+                            <Elements stripe={stripePromise} options={optionsPayment}>
+                                <Payments/>
+                            </Elements>
                         </div>
                     }
                 </div>

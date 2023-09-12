@@ -7,21 +7,25 @@
 
     .checkout-payments-section {
         margin-bottom:25px;
+
+        .checkout-payments-form-divider {
+            border-bottom:1px solid gray;
+            margin:15px 0 10px 0;
+        }
     }
 
     .checkout-pay-button {
         line-height:40px;
-        margin-top:15px;
         width:33%;
-        background:rgb(173, 238, 173);
+        background-color:green;
         outline:none;
         border-radius:10px;
         font-size:16px;
         font-weight:200px;
         transition: 300ms;
         border:none;
-        box-shadow:1px 1px 3px green;
-        color:rgb(0, 46, 2);
+        box-shadow:1px 1px 3px rgb(0, 27, 0);
+        color:white;
         font-size:20px;
 
         &:hover {
@@ -30,7 +34,9 @@
         }
 
         &:active {
-            transform:scale(0.9);
+            transform:scale(0.85);
+            background-color:green;
+            color:white;
         }
     }
 }
