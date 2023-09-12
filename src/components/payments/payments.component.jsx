@@ -1,5 +1,5 @@
 import { AddressElement, CardElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/cart-context';
 
 import './payments.styles.scss';
@@ -13,19 +13,22 @@ const Payments = () => {
     const elements = useElements();
     const { totalCartPrice } = useContext(CartContext);
 
+    const [isProcessing, setIsProcessing] = useState(false);
+
     const submitHandler = async (event) => {
         event.preventDefault();
         elements.submit();
-        if (!stripe || !elements ) {
+        if (!stripe || !elements) {
             return;
         }
-        
+
+        setIsProcessing(true);
         const response = await fetch("/.netlify/functions/create-payment-intent", {
-            method:'POST',
+            method: 'POST',
             header: {
                 "Content-Type": "application/json"
             },
-            body:JSON.stringify({ amount: totalCartPrice*100 })
+            body: JSON.stringify({ amount: totalCartPrice * 100 })
         }).then(r => r.json());
         console.log(response);
 
@@ -39,14 +42,12 @@ const Payments = () => {
             }
         });
 
-
-        if(paymentResult.error) {
+        if (paymentResult.error) {
             alert(paymentResult.error.message);
         } else {
-            if(paymentResult.paymentIntent.status === 'succeeded') {
-                alert('Payment Successful!')
-            }
+            alert('Payment Successful!')
         }
+        setIsProcessing(false);
     }
 
     return (
@@ -58,7 +59,7 @@ const Payments = () => {
                     <div className="checkout-payments-form-divider" />
                     <AddressElement options={optionsShipping} />
                 </div>
-                <button type="submit" className="checkout-pay-button">Buy Now</button>
+                <button type="submit" className={`checkout-pay-button ${!isProcessing ? 'pm-not-processing' : 'pm-is-processing'}`} disabled={isProcessing}>{!isProcessing ? 'Buy Now' : 'Processing...'}</button>
             </form>
         </div>
     )

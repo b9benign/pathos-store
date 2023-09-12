@@ -1,43 +1,55 @@
 .checkout-payments-container {
-    margin:45px 0;
-    border:1px solid var(--light-shade);
-    border-radius:7px;
-    padding:15px 10px;
-    box-shadow:3px 3px 10px gray;
+    margin: 45px 0;
+    border: 1px solid var(--light-shade);
+    border-radius: 7px;
+    padding: 15px 10px;
+    box-shadow: 3px 3px 10px gray;
 
     .checkout-payments-section {
-        margin-bottom:25px;
+        margin-bottom: 25px;
 
         .checkout-payments-form-divider {
-            border-bottom:1px solid gray;
-            margin:15px 0 10px 0;
+            border-bottom: 1px solid gray;
+            margin: 15px 0 10px 0;
         }
     }
 
     .checkout-pay-button {
-        line-height:40px;
-        width:33%;
-        background-color:green;
-        outline:none;
-        border-radius:10px;
-        font-size:16px;
-        font-weight:200px;
+        line-height: 40px;
+        width: 33%;
+        outline: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 200px;
         transition: 300ms;
-        border:none;
-        box-shadow:1px 1px 3px rgb(0, 27, 0);
-        color:white;
-        font-size:20px;
+        border: none;
+        color: white;
+        font-size: 20px;
+
+        &.pm-not-processing {
+            background-color: green;
+            box-shadow: 1px 1px 3px rgb(0, 27, 0);
+        }
+
+        &.pm-is-processing {
+            background-color:rgb(147, 255, 147);
+            box-shadow: 1px 1px 3px rgb(0, 27, 0);
+            border-radius: none;
+
+            &:hover {
+                cursor: default;
+            }
+        }
 
         &:hover {
-            cursor:pointer;
-            border-radius:0;
+            cursor: pointer;
+            border-radius: 0;
         }
 
         &:active {
-            transform:scale(0.85);
-            background-color:green;
-            color:white;
+            transform: scale(0.85);
+            background-color: green;
+            color: white;
         }
     }
 }
-
