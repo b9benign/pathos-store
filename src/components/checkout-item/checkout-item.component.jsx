@@ -17,7 +17,7 @@ const CheckoutItem = ({ item }) => {
             <DeleteIcon className="checkout-item-delete-icon" onClick={() => deleteItemFromCart(item)}/>
             <div className="checkout-item-image-wrapper">
                 <img
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/profile.webp`)}
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/profile.webp`)}
                     alt="cart item"
                     className="checkout-item-product-image" 
                     loading='lazy'

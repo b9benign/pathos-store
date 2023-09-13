@@ -16,7 +16,7 @@ const ProductModalRotation = ({ item, imageToggler }) => {
         <div className="product-modal-image-rotation">
             <button className="product-modal-selection-button" onClick={() => handleImageActivation('thumbnail')}>
                 <img
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)}
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/thumbnail.webp`)}
                     className="product-modal-selectable-image"
                     alt="product thumbnail"
                     loading='lazy'
@@ -25,7 +25,7 @@ const ProductModalRotation = ({ item, imageToggler }) => {
             </button>
             <button className="product-modal-selection-button" onClick={() => handleImageActivation('profile')}>
                 <img
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/profile.webp`)}
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/profile.webp`)}
                     className="product-modal-selectable-image"
                     alt="product profile"
                     value="profile"
@@ -35,7 +35,7 @@ const ProductModalRotation = ({ item, imageToggler }) => {
             </button>
             <button className="product-modal-selection-button" onClick={() => handleImageActivation('top')}>
                 <img
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/top.webp`)}
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/top.webp`)}
                     className="product-modal-selectable-image"
                     alt="product top"
                     loading='lazy'
@@ -44,7 +44,7 @@ const ProductModalRotation = ({ item, imageToggler }) => {
             </button>
             <button className="product-modal-selection-button" onClick={() => handleImageActivation('back')}>
                 <img
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/back.webp`)}
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/back.webp`)}
                     className="product-modal-selectable-image"
                     alt="product back"
                     loading='lazy'

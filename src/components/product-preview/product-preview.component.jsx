@@ -56,7 +56,7 @@ const ProductPreview = ({item}) => {
             }
             <div className="product-preview-image-container"  onClick={toggleModal}>
                 <img 
-                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)} 
+                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/thumbnail.webp`)}
                     className="product-preview-thumbnail"
                     alt={name}
                     loading='lazy'

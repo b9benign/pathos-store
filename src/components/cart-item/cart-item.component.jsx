@@ -17,7 +17,7 @@ const CartItem = () => {
 
                             <div className="cart-item-image-wrapper">
                                 <img
-                                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/thumbnail.webp`)}
+                                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/thumbnail.webp`)}
                                     alt="cart item"
                                     className="cart-item-product-image"
                                     loading='lazy'

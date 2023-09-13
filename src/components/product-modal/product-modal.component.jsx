@@ -38,7 +38,7 @@ const ProductModal = ({ item, modalUtil }) => {
                         <div className="product-modal-images-container">
                             <div className="product-modal-displayed-image">
                                 <img
-                                    src={require(`../../assets/product-images/${gender}s/${brand.toLowerCase()}/${activeImage}.webp`)}
+                                    src={require(`../../assets/product-images/${gender}s/${brand === 'New Balance' ? 'newbalance' : brand.toLowerCase()}/${activeImage}.webp`)}
                                     className="product-modal-active-image"
                                     alt={`product ${activeImage}`}
                                     loading='lazy'
