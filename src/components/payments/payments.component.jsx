@@ -11,9 +11,10 @@ const Payments = () => {
     };
     const stripe = useStripe();
     const elements = useElements();
-    const { totalCartPrice } = useContext(CartContext);
+    const { totalCartPrice, setCartItems } = useContext(CartContext);
 
     const [isProcessing, setIsProcessing] = useState(false);
+    const [hasSucceeded, setHasSucceeded] = useState(false);
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -23,6 +24,7 @@ const Payments = () => {
         }
 
         setIsProcessing(true);
+        setHasSucceeded(false);
         const response = await fetch("/.netlify/functions/create-payment-intent", {
             method: 'POST',
             header: {
@@ -38,30 +40,39 @@ const Payments = () => {
             elements,
             clientSecret: clientSecret,
             confirmParams: {
-                return_url: 'http://localhost:8888/checkout'
-            }
+                return_url: window.location.origin
+            },
+            redirect: 'if_required'
         });
+
 
         if (paymentResult.error) {
             alert(paymentResult.error.message);
         } else {
-            alert('Payment Successful!')
+            if (paymentResult.paymentIntent.status === 'succeeded') {
+                alert('Payment succeeded!');
+                setCartItems([]);
+            }
         }
+
         setIsProcessing(false);
     }
 
     return (
-        <div className="checkout-payments-container">
-            <form onSubmit={submitHandler}>
-                <div className="checkout-payments-section">
-                    <h2>Billing & Shipping</h2>
-                    <PaymentElement />
-                    <div className="checkout-payments-form-divider" />
-                    <AddressElement options={optionsShipping} />
-                </div>
-                <button type="submit" className={`checkout-pay-button ${!isProcessing ? 'pm-not-processing' : 'pm-is-processing'}`} disabled={isProcessing}>{!isProcessing ? 'Buy Now' : 'Processing...'}</button>
-            </form>
-        </div>
+        <>  
+            <div className="checkout-payments-container">
+                <form onSubmit={submitHandler}>
+                    <div className="checkout-payments-section">
+                        <h2>Billing & Shipping</h2>
+                        <PaymentElement />
+                        <div className="checkout-payments-form-divider" />
+                        <AddressElement options={optionsShipping} />
+                    </div>
+                    <button type="submit" className={`checkout-pay-button ${!isProcessing ? 'pm-not-processing' : 'pm-is-processing'}`} disabled={isProcessing}>{!isProcessing ? 'Buy Now' : 'Processing...'}</button>
+                </form>
+            </div>
+        </>
+
     )
 }
 
