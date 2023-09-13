@@ -28,7 +28,7 @@ const CheckoutItem = ({ item }) => {
                 <div className="checkout-item-info-name">{name}</div>
                 <div className="checkout-item-info-category">{brand}</div>
                 <div className="checkout-item-info-size">{`${gender}'s ${size}`}</div>
-                <div className="checkout-item-info-price">{quantity > 1 && `$${relPrice}`} <span className="checkout-item-info-pip">{`(${price})`}</span></div>
+                <div className="checkout-item-info-price">{quantity >= 1 && `$${relPrice}`} <span className="checkout-item-info-pip">{quantity > 1 && `(${price})`}</span></div>
             </div>
 
             <div className="checkout-item-quantity-container">

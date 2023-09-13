@@ -1,4 +1,4 @@
-import { AddressElement, CardElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { AddressElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/cart-context';
 
@@ -14,7 +14,6 @@ const Payments = () => {
     const { totalCartPrice, setCartItems } = useContext(CartContext);
 
     const [isProcessing, setIsProcessing] = useState(false);
-    const [hasSucceeded, setHasSucceeded] = useState(false);
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -24,7 +23,6 @@ const Payments = () => {
         }
 
         setIsProcessing(true);
-        setHasSucceeded(false);
         const response = await fetch("/.netlify/functions/create-payment-intent", {
             method: 'POST',
             header: {
@@ -50,7 +48,7 @@ const Payments = () => {
             alert(paymentResult.error.message);
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
-                alert('Payment succeeded!');
+                alert('Payment succeeded! (This section is subject to change/ improvement)');
                 setCartItems([]);
             }
         }

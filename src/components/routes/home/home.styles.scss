@@ -7,13 +7,10 @@
 
     .homepage-title {
         text-align: center;
-        font-size:104px;
-        margin:55px 0px 75px 0px;
-        font-weight:900;
-        font-style: italic;
-        text-shadow: 7px 7px orange;
-        padding: 0 15px;
+        margin:100px 0px 75px 0px;
+        font-size:40px;
     }
+
     @media (max-width:1250px) {
         .homepage-sections-container {
             flex-direction: column !important;
@@ -28,13 +25,11 @@
     }
     @media only screen and (max-width:650px) {
         .homepage-title {
-            margin-top:55px;
-            font-size:80px;
+            font-size:40px;
         }
     }
     @media only screen and (max-width:400px) {
         .homepage-title {
-            font-size:70px;
             margin-top:20px;
         }
     }

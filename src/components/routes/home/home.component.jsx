@@ -13,9 +13,7 @@ const HomePage = () => {
         <div className="home-container">
 
             <Brands />
-            <h1 className="homepage-title">Welcome to pathos &hearts;</h1>
-            {/* <TrendsCarousel />
-            <HomePageInfo /> */}
+            <span className="homepage-title">Our homepage is still under construction</span>
 
         </div>
     );
