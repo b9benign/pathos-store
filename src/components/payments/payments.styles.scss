@@ -29,6 +29,17 @@
         &.pm-not-processing {
             background-color: green;
             box-shadow: 1px 1px 3px rgb(0, 27, 0);
+
+            &:active {
+                transform: scale(0.85);
+                background-color: green;
+                color: white;
+            }
+
+            &:hover {
+                cursor: pointer;
+                border-radius: 0;
+            }
         }
 
         &.pm-is-processing {
@@ -39,17 +50,6 @@
             &:hover {
                 cursor: default;
             }
-        }
-
-        &:hover {
-            cursor: pointer;
-            border-radius: 0;
-        }
-
-        &:active {
-            transform: scale(0.85);
-            background-color: green;
-            color: white;
-        }
+        } 
     }
 }

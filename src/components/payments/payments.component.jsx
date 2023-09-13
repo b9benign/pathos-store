@@ -46,14 +46,14 @@ const Payments = () => {
 
         if (paymentResult.error) {
             alert(paymentResult.error.message);
+            setIsProcessing(false);
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
                 alert('Payment succeeded! (This section is subject to change/ improvement)');
                 setCartItems([]);
+                setIsProcessing(false);
             }
         }
-
-        setIsProcessing(false);
     }
 
     return (
