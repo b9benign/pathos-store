@@ -66,8 +66,6 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
         alert("Invalid Email");
       }
       console.log(error);
-      console.log(email);
-      console.log(password);
     }
   }
 }
