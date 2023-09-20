@@ -12,6 +12,7 @@ const AuthPage = () => {
 
     const handleClick = async () => {
         await signInUserAuthWithEmailAndPassword(process.env.REACT_APP_DEMO_ADDRESS, process.env.REACT_APP_DEMO_AUTH);
+        window.location.reload();
     }
     return (
         <>
