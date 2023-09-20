@@ -62,8 +62,12 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
     } catch (error) {
       if(error.code === "auth/wrong-password") {
         alert("Wrong password. For easier sign-in use your existing Google Account.");
+      } else if(error.code === "auth/invalid-email") {
+        alert("Invalid Email");
       }
       console.log(error);
+      console.log(email);
+      console.log(password);
     }
   }
 }
