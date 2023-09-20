@@ -9,9 +9,7 @@ export const LovedItemContext = createContext({
   lovedIdList: [],
   toggleIsItemLoved: () => { },
   fetchLovedList: () => { },
-  searchForLove: () => { },
-  onLovedList: false,
-  setOnLovedList: () => {}
+  fetchLovedIdsList: () => { }
 })
 
 
@@ -21,14 +19,14 @@ const LovedProvider = ({ children }) => {
   const [lovedList, setLovedList] = useState(defaultLovedList);
   const [lovedIdList, setLovedIdList] = useState([]);
   const { currentUser } = useContext(UserContext);
-  const [onLovedList, setOnLovedList] = useState(false);
 
 
-  const toggleIsItemLoved = (itemToToggle) => {
+  const toggleIsItemLoved = async (itemToToggle) => {
     if (!currentUser) {
       alert('Log in to heart items.');
     } else {
-      toggleLovedItem(itemToToggle, currentUser);
+      await toggleLovedItem(itemToToggle, currentUser);
+      fetchLovedIdsList();
     }
   }
 
@@ -53,7 +51,7 @@ const LovedProvider = ({ children }) => {
     if (currentUser) {
       unsubscribe();
     }
-  }, [currentUser]);
+  }, [currentUser, lovedList]);
 
 
   const fetchLovedIdsList = async () => {
@@ -73,14 +71,7 @@ const LovedProvider = ({ children }) => {
     }
   }
 
-  const searchForLove = (itemToCheck) => {
-    if (lovedList.includes(itemToCheck)) {
-      return true;
-    }
-    return false;
-  }
 
-  
 
 
   const value = {
@@ -88,10 +79,7 @@ const LovedProvider = ({ children }) => {
     lovedList,
     fetchLovedList,
     fetchLovedIdsList,
-    searchForLove,
     lovedIdList,
-    onLovedList,
-    setOnLovedList
   }
 
   return (

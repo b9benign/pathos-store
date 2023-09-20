@@ -26,10 +26,9 @@ const ProductModalTable = ({ item }) => {
         setShoeSize(value);
     }
 
-    const toggleLovedHandler = async () => {
+    const toggleLovedHandler = () => {
         toggleIsItemLoved(item);
-        await fetchLovedIdsList();
-        if(currentUser){
+        if(currentUser) {
             setCurrentlyLoved(!currentlyLoved);
         }
     }

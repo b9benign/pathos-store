@@ -3,6 +3,7 @@ import ProductFilter from '../../product-filter/product-filter.component';
 
 import { useContext, useState, useEffect } from 'react';
 import { ListContext } from '../../../context/list-context';
+import { LovedItemContext } from '../../../context/loved-context';
 
 import './store.styles.scss';
 
@@ -12,24 +13,24 @@ import './store.styles.scss';
 const StorePage = () => { 
 
     const { filteredProducts } = useContext(ListContext);
+    const { fetchLovedIdsList, lovedIdList } = useContext(LovedItemContext);
+
     const [currentPage, setCurrentPage] = useState(1)
     const pageProducts = 15;
-
     const lastPost = currentPage * pageProducts;
     const firstPost = lastPost - pageProducts;
-    const [currentList, setCurrentList] = useState(filteredProducts.slice(firstPost, lastPost));
     const [pagesNum, setPagesNum] = useState([]);
     const [activePage, setActivePage] = useState(currentPage);
+    const [currentList, setCurrentList] = useState(filteredProducts.slice(firstPost, lastPost));
+
 
     const handlePaginate = (e) => {
         const { value } = e.target;
         setCurrentPage(value);
     }
-
     useEffect(() => {
         setActivePage(currentPage.toString())
     }, [currentPage])
-
     useEffect(() => {
         const unsubscribe = () => {
             setCurrentList(() => {
@@ -39,7 +40,6 @@ const StorePage = () => {
         }
         return unsubscribe();
     }, [ filteredProducts, firstPost, lastPost, pageProducts])
-
     useEffect(() => {
         const temp = [];
         for (let i = 1; i <= Math.ceil(filteredProducts.length / pageProducts); i++) {
@@ -48,7 +48,6 @@ const StorePage = () => {
         setPagesNum(temp);
         setCurrentPage(1);
     }, [filteredProducts, pageProducts])
-
 
     return (
         <>
@@ -60,7 +59,7 @@ const StorePage = () => {
 
                     <div className="store-products-container">
                         {currentList.map((item) => {
-                            return <ProductPreview item={item} key={item.id} />
+                            return <ProductPreview key={item.id} item={item}/>
                         })}
                     </div>
                     { pagesNum.length > 1 &&

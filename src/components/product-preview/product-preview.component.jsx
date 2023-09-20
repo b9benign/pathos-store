@@ -16,33 +16,30 @@ const ProductPreview = ({item}) => {
     const {name, id, price, brand, category, gender} = item;
     const [modalState, setModalState] = useState(false);
     const modalUtil = {modalState, setModalState};
-    const {toggleIsItemLoved, lovedIdList, fetchLovedIdsList, onLovedList, setOnLovedList} = useContext(LovedItemContext);
+    const {toggleIsItemLoved, lovedIdList, lovedList} = useContext(LovedItemContext);
     const [currentlyLoved, setCurrentlyLoved] = useState(lovedIdList.includes(id));
     const {currentUser} = useContext(UserContext);
 
     const toggleModal = () => {
         setModalState(true);
     }
-    const toggleLovedHandler = async () => { //bug: when store-page is refreshed, hearted items won't be displayed as such
-        toggleIsItemLoved(item);
-        await fetchLovedIdsList();
-        if(currentUser){
-            setCurrentlyLoved(!currentlyLoved);
-        }
-    }
 
     useEffect(() => {
         const fetchLovedStatus = () => {
             if(lovedIdList.includes(id)) {
-                setOnLovedList(true);
-
                 return setCurrentlyLoved(true);
             }
-            setOnLovedList(false);
             setCurrentlyLoved(false);
         }
         return fetchLovedStatus();
-    }, [id, currentUser, lovedIdList, setOnLovedList])
+    }, [id, currentUser, lovedIdList, lovedList])
+
+    const toggleLovedHandler = () => {
+        toggleIsItemLoved(item);
+        if(currentUser) {
+            setCurrentlyLoved(!currentlyLoved);
+        }
+    }
 
     return (
         
@@ -50,7 +47,7 @@ const ProductPreview = ({item}) => {
         
         <div className="product-preview-container">
                  
-            { currentlyLoved || onLovedList ?
+            { currentlyLoved ?
                 <LovedIconFilled className="product-preview-heart-filled-icon" onClick={toggleLovedHandler}/> :
                 <LovedIcon className="product-preview-heart-icon" onClick={toggleLovedHandler}/>
             }
