@@ -11,7 +11,7 @@ const AuthPage = () => {
     const { currentUser } = useContext(UserContext);
 
     const handleClick = async () => { //security is overrated anyways
-        await signInUserAuthWithEmailAndPassword('cece@cece.cece', 'cecece');
+        await signInUserAuthWithEmailAndPassword(process.env.REACT_APP_DEMO_ADDRESS, process.env.REACT_APP_DEMO_AUTH);
         window.location.reload();
     }
     return (
