@@ -23,7 +23,7 @@ function App() {
           <Route path="/auth" element={< AuthPage />} />
           <Route path="/store" element={< StorePage />} />
           <Route path="/loved" element={<LovedPage />} />
-          <Route path='/checkout/payment-succeeded' element={< PaymentSuccess />} />
+          <Route path='/thank-you' element={< PaymentSuccess />} />
           <Route path='/checkout' element={<CheckoutPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

@@ -38,7 +38,7 @@ const Payments = () => {
             elements,
             clientSecret: clientSecret,
             confirmParams: {
-                return_url: "https://pathos-store.netlify.app/checkout/payment-succeeded"
+                return_url: "https://pathos-store.netlify.app/thank-you"
             },
         });
 
