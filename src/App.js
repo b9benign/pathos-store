@@ -8,7 +8,7 @@ import CartPreview from './components/cart-preview/cart-preview-component';
 import LovedPage from './components/routes/loved/loved.component';
 import CheckoutPage from './components/routes/checkout/checkout.component';
 import NotFound from './components/routes/not-found/not-found.component';
-import PaymentSuccess from './components/payment-results/payment-success.component';
+import PaymentSuccess from './components/routes/payment-results/payment-success.component';
 
 import './App.css';
 
