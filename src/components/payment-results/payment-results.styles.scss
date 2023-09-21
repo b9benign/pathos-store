@@ -1,0 +1,28 @@
+.payment-success-page-container {
+    width:100%;
+    height:200px;
+    background-color:rgb(108, 165, 108);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:10%;
+
+    .payment-success-content-spacer {
+        height:auto;
+        width:320px;
+        color:white;
+        text-align: center;
+
+        .payment-success-header {
+            font-size:36px;
+            margin-top:-5px;
+        }
+
+        .payment-success-acknowledgement {
+            font-size: 18px;
+            font-style: italic;
+            font-weight:200;
+        }
+    }
+}

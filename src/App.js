@@ -8,6 +8,7 @@ import CartPreview from './components/cart-preview/cart-preview-component';
 import LovedPage from './components/routes/loved/loved.component';
 import CheckoutPage from './components/routes/checkout/checkout.component';
 import NotFound from './components/routes/not-found/not-found.component';
+import PaymentSuccess from './components/payment-results/payment-success.component';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/store" element={< StorePage />} />
           <Route path="/loved" element={<LovedPage />} />
           <Route path='/checkout' element={<CheckoutPage />} />
+          <Route path='/checkout/payment-succeeded' element={< PaymentSuccess/>}/ >
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

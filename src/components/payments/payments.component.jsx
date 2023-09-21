@@ -38,18 +38,16 @@ const Payments = () => {
             elements,
             clientSecret: clientSecret,
             confirmParams: {
-                return_url: window.location.origin
+                return_url: "http://localhost:3000/checkout/payment-succeeded"
             },
-            redirect: 'if_required'
         });
 
 
         if (paymentResult.error) {
-            alert(paymentResult.error.message);
+            alert("Something went wrong: ", paymentResult.error.message);
             setIsProcessing(false);
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
-                alert('Payment succeeded! (This section is subject to change/ improvement)');
                 setCartItems([]);
                 setIsProcessing(false);
             }
