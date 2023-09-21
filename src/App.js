@@ -24,13 +24,14 @@ function App() {
           <Route path="/store" element={< StorePage />} />
           <Route path="/loved" element={<LovedPage />} />
           <Route path='/checkout' element={<CheckoutPage />} />
-          <Route path='/checkout/payment-succeeded' element={< PaymentSuccess/>}/ >
+          <Route path='checkout/payment-succeeded' element={< PaymentSuccess />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
     </div>
-  );
+  )
 }
+
 
 export default App;
