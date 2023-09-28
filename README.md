@@ -1,3 +1,3 @@
-## I will likely not update the README until I consider this project finished.
+# Visit https://pathos-store.netlify.app/store for the current live version.
 
-### For now all there is to know is, that this is a fullstack e-Commerce project I've created for practice and for fun. It is powered by React.js, Firebase and Stripe.
+### This project is not yet finished, I'll properly do the README as soon as possible.
